@@ -6,14 +6,17 @@ No caso de puxar do GitHub, na pasta do projeto, só digite (todas as dependênc
 
 ### `npm install`
 
-Na pasta pai:
+Caso esteja criando do zero, na pasta pai:
 
 ### `npm create-react-app react_costs`
 ### `npm update`
 
 ## Dependências
 
-### `npm install json-server`
+### `npm install json-server --save`
+### `npm install react-icons --save`
+### `npm install react-router-dom --save`
+### `npm install uuid --save`
 
 ## Scripts Disoníveis
 
