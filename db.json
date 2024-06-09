@@ -1,50 +1,5 @@
 {
-  "projects": [
-    {
-      "id": "ac1d",
-      "name": "Página Clijo!",
-      "budget": "10000",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "a900",
-      "name": "Projeto Costs",
-      "budget": "500",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "0753",
-      "name": "Controle Financeiro",
-      "budget": "5000",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "d963",
-      "name": "Novo Projeto",
-      "budget": "900",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 0,
-      "services": []
-    }
-  ],
+  "projects": [],
   "categories": [
     {
       "id": "1",
