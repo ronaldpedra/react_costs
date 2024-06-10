@@ -3,13 +3,44 @@
     {
       "id": "094e",
       "name": "Clijo!",
-      "budget": "13000",
+      "budget": 13000,
       "category": {
         "id": "3",
         "name": "Design"
       },
-      "cost": 0,
-      "services": []
+      "cost": 700,
+      "services": [
+        {
+          "name": "Meu novo serviço",
+          "cost": "100",
+          "description": "serviço novo",
+          "id": "79d8d276-3a58-4692-b9a4-64a64242c2ae"
+        },
+        {
+          "name": "Meu novo serviço",
+          "cost": "100",
+          "description": "serviço novo",
+          "id": "79d8d276-3a58-4692-b9a4-64a64242c2ae"
+        },
+        {
+          "name": "teste",
+          "cost": "200",
+          "description": "teste",
+          "id": "4e42e36d-473a-4fae-b83a-1ea0d71b437a"
+        },
+        {
+          "name": "teste",
+          "cost": "200",
+          "description": "teste",
+          "id": "bf638360-a223-4102-b987-37bc78c83ac5"
+        },
+        {
+          "name": "teste2",
+          "cost": "100",
+          "description": "teste2",
+          "id": "9c249e23-03d7-4899-bd26-219f7f3ce477"
+        }
+      ]
     },
     {
       "id": "aa07",
