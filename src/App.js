@@ -1,7 +1,8 @@
 // Recursos de Sistema
-import { Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // Layout
 import Header from "./components/layout/Header";
+import Container from "./components/layout/Container";
 
 function App() {
   return (
