@@ -11,6 +11,7 @@ function NewProject() {
         // Initialize cost and services
         project.cost = 0
         project.services = []
+        project.budget = parseFloat(project.budget)
 
         fetch('http://localhost:5000/projects', {
             method: 'POST',

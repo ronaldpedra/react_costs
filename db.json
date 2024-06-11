@@ -1,57 +1,33 @@
 {
   "projects": [
     {
-      "id": "094e",
+      "id": "0b5b",
       "name": "Clijo!",
-      "budget": 13000,
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 700,
-      "services": [
-        {
-          "name": "Meu novo serviço",
-          "cost": "100",
-          "description": "serviço novo",
-          "id": "79d8d276-3a58-4692-b9a4-64a64242c2ae"
-        },
-        {
-          "name": "Meu novo serviço",
-          "cost": "100",
-          "description": "serviço novo",
-          "id": "79d8d276-3a58-4692-b9a4-64a64242c2ae"
-        },
-        {
-          "name": "teste",
-          "cost": "200",
-          "description": "teste",
-          "id": "4e42e36d-473a-4fae-b83a-1ea0d71b437a"
-        },
-        {
-          "name": "teste",
-          "cost": "200",
-          "description": "teste",
-          "id": "bf638360-a223-4102-b987-37bc78c83ac5"
-        },
-        {
-          "name": "teste2",
-          "cost": "100",
-          "description": "teste2",
-          "id": "9c249e23-03d7-4899-bd26-219f7f3ce477"
-        }
-      ]
-    },
-    {
-      "id": "aa07",
-      "name": "Ronald",
-      "budget": "500",
+      "budget": 1000,
       "category": {
         "id": "2",
         "name": "Desenvolvimento"
       },
       "cost": 0,
       "services": []
+    },
+    {
+      "id": "9dba",
+      "name": "Ronald",
+      "budget": 2000,
+      "category": {
+        "id": "4",
+        "name": "Planejamento"
+      },
+      "cost": 400,
+      "services": [
+        {
+          "name": "Contratar Funcionário",
+          "cost": 400,
+          "description": "Contratar novo funcionário da área de desenvolvimento",
+          "id": "7d83a3a5-7909-4ac0-82ed-1357f7ea6ff9"
+        }
+      ]
     }
   ],
   "categories": [
