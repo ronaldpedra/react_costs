@@ -116,7 +116,7 @@ function Project() {
         setMessage('')
 
         const servicesUpdated = project.services.filter(
-            (service) => service.id !== id 
+            (service) => service.id !== id
         )
 
         const projectUpdated = project
@@ -131,14 +131,14 @@ function Project() {
             },
             body: JSON.stringify(projectUpdated)
         })
-        .then(resp => resp.json())
-        .then((data) => {
-            setProject(projectUpdated)
-            setServices(servicesUpdated)
-            setMessage('Serviço removido com sucesso!')
-            setType('success')
-        })
-        .catch(err => console.log(err))
+            .then(resp => resp.json())
+            .then((data) => {
+                setProject(projectUpdated)
+                setServices(servicesUpdated)
+                setMessage('Serviço removido com sucesso!')
+                setType('success')
+            })
+            .catch(err => console.log(err))
 
 
     }

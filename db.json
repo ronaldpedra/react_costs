@@ -1,35 +1,5 @@
 {
-  "projects": [
-    {
-      "id": "0b5b",
-      "name": "Clijo!",
-      "budget": 1000,
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "9dba",
-      "name": "Ronald",
-      "budget": 2000,
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 400,
-      "services": [
-        {
-          "name": "Contratar Funcionário",
-          "cost": 400,
-          "description": "Contratar novo funcionário da área de desenvolvimento",
-          "id": "7d83a3a5-7909-4ac0-82ed-1357f7ea6ff9"
-        }
-      ]
-    }
-  ],
+  "projects": [],
   "categories": [
     {
       "id": "1",
