@@ -1,0 +1,9 @@
+.header_container {
+    /* disposição */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* dimensão */
+    /* cores */
+    background-color: #daa520;
+}
