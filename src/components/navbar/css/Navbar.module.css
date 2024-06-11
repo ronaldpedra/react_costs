@@ -2,7 +2,5 @@
     /* disposição */
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
-    width: 1200;
-
+    padding: 1em;
 }
