@@ -4,18 +4,22 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/layout/Header";
 import Container from "./components/layout/Container";
 import Footer from "./components/layout/Footer";
+// Pages
+import Home from "./components/pages/Home";
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Header />
-        <Container>
-          <Route to='/' 
+      <Header />
+      <Container>
+        <Routes>
 
-        </Container>
-        <Footer />
-      </Routes>
+
+          <Route to='/' element={<Home />} />
+
+        </Routes>
+      </Container>
+      <Footer />
     </Router>
 
   );
