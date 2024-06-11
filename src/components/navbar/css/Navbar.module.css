@@ -2,6 +2,7 @@
     /* disposição */
     display: flex;
     justify-content: space-between;
-    background-color: aqua;
+    margin: 0 auto;
+    width: 1200;
 
 }

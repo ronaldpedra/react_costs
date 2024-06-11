@@ -1,0 +1,8 @@
+.container {
+    /* disposição */
+    display: flex;
+    justify-content: space-between;
+    /* dimensão */
+    width: 1200px;
+    /* cores */
+}

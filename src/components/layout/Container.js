@@ -1,6 +1,11 @@
+// Folhas de estilo
+import styles from "./css/Container.module.css"
+
 function Container(props) {
     return (
-        <div></div>
+        <div className={styles.container}>
+            {props.children}
+        </div>
     )
 }
 
