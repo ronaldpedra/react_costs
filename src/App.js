@@ -14,13 +14,12 @@ function App() {
   return (
     <Router>
       <Header />
-      <Container customClass='min_heigth'>
+      <Container customClass='min_height'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/projetos' element={<Projetos />} />
           <Route path='/empresa' element={<Empresa />} />
           <Route path='/contato' element={<Contato />} />
-
         </Routes>
       </Container>
       <Footer />
