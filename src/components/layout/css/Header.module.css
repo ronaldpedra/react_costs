@@ -1,10 +1,7 @@
 .header_container {
-    /* disposição */
     display: flex;
     align-items: center;
     justify-content: center;
-    /* dimensão */
     width: 100%;
-    /* cores */
     background-color: #222;
 }
