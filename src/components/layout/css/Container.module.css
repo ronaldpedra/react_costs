@@ -2,7 +2,13 @@
     /* disposição */
     display: flex;
     justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
     /* dimensão */
     width: 1200px;
     /* cores */
+}
+
+.min_height {
+    min-height: 75%;
 }

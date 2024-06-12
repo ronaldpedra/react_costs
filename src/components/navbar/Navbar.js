@@ -13,10 +13,10 @@ function Navbar() {
             <Container>
                 <Link to='/'><img src={logo} alt="Costs" /></Link>
                 <ul>
-                    <li>Home</li>
-                    <li>Projetos</li>
-                    <li>Empresa</li>
-                    <li>Contato</li>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/projetos'>Projetos</Link></li>
+                    <li><Link to='/empresa'>Empresa</Link></li>
+                    <li><Link to='/contato'>Contato</Link></li>
                 </ul>
             </Container>
 

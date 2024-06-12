@@ -4,6 +4,7 @@
     align-items: center;
     justify-content: center;
     /* dimensão */
+    width: 100%;
     /* cores */
-    background-color: #daa520;
+    background-color: #222;
 }
