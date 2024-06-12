@@ -1,0 +1,12 @@
+.novoprojeto_container {
+    margin: 0 auto;
+}
+
+.novoprojeto_container h1 {
+    margin-top: 2em;
+}
+
+.novoprojeto_container p {
+    margin-top: 1em;
+    color: #808080;
+}
