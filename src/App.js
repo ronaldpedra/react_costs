@@ -14,7 +14,7 @@ function App() {
   return (
     <Router>
       <Header />
-      <Container>
+      <Container customClass='min_heigth'>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/projetos' element={<Projetos />} />
