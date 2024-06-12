@@ -1,7 +1,9 @@
-import styles from "./css/Button.module"
-function Button({ texto }) {
+import { Link } from "react-router-dom"
+import styles from "./css/Button.module.css"
+
+function Button({ to, texto }) {
     return (
-        <button>{ texto }</button>
+        <Link className={styles.btn} to={ to }>{ texto }</Link>
     )
 }
 
