@@ -24,7 +24,6 @@ function App() {
       </Container>
       <Footer />
     </Router>
-
   );
 }
 
