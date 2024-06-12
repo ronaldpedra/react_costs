@@ -9,7 +9,7 @@ import Home from "./components/pages/Home";
 import Projetos from "./components/pages/Projetos";
 import Empresa from "./components/pages/Empresa";
 import Contato from "./components/pages/Contato";
-import NovoProjeto from "./components/pages/novoprojeto";
+import NovoProjeto from "./components/pages/NovoProjeto";
 
 function App() {
   return (
