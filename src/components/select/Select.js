@@ -6,7 +6,7 @@ function Select({ labelText, name }) {
             <label htmlFor={name}>{labelText}</label>
             <select name={name} id={name}>
                 <option value="0">Selecione uma opção</option>
-                
+                <option value="1">Uma opção</option>
             </select>
         </div>
     )

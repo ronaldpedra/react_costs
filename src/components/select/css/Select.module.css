@@ -11,6 +11,15 @@
     margin-top: 0.5em;
     padding: 0.8em;
     color: #808080;
+    background-color: #fff;
+    appearance: none;
+}
+
+.select_container option {
+    padding: 5px;
+    margin: 2px;
+    
+    background-color: red;
 }
 
 .select_container label {
