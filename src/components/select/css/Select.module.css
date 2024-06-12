@@ -6,20 +6,25 @@
 }
 
 .select_container select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
     font-size: 20px;
     border: none;
     margin-top: 0.5em;
     padding: 0.8em;
     color: #808080;
     background-color: #fff;
-    appearance: none;
+
+    background-image: url('../../../img/expand-removebg-preview.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: right 20px top 50%;
 }
 
-.select_container option {
-    padding: 5px;
-    margin: 2px;
-    
-    background-color: red;
+.select_container select:active {
+    background-image: url('../../../img/colapse-removebg-preview.png');
 }
 
 .select_container label {

@@ -3,7 +3,7 @@ import styles from "./css/Button.module.css"
 
 function Button({ to, texto }) {
     return (
-        <Link className={styles.btn} to={ to }>{ texto }</Link>
+        <Link className={styles.btn} to={to}>{texto}</Link>
     )
 }
 
