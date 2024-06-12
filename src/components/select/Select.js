@@ -5,7 +5,8 @@ function Select({ labelText, name }) {
         <div className={styles.select_container}>
             <label htmlFor={name}>{labelText}</label>
             <select name={name} id={name}>
-                <option value="Selecione uma opção">Selecione uma opção</option>
+                <option value="0">Selecione uma opção</option>
+                
             </select>
         </div>
     )
