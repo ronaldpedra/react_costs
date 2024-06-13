@@ -15,18 +15,20 @@ function Projetos() {
     }
 
     return (
-        <div>
+        <>
+         <div className={styles.projetos_container}>
             <Message
                 type={mensagem.type}
                 text={mensagem.text}
                 setMessage={setMessage} />
-            <div className={styles.projetos_container}>
+           
                 <h1>Meus Projetos</h1>
                 <LinkButton to='/novoprojeto' text='Criar Projeto' />
 
-            </div>
+           
 
         </div>
+        </>
     )
 }
 
