@@ -1,12 +1,15 @@
-import Form from "../forms/Form"
+import ProjectForm from "../projectForm/ProjectForm"
 import styles from "./css/NovoProjeto.module.css"
 
 function NovoProjeto() {
+
+    function criarProjeto() {}
+
     return (
         <div className={styles.novoprojeto_container}>
             <h1>Criar Projeto</h1>
             <p>Crie o seu projeto para depois adicionar os serviços</p>
-            <Form />
+            <ProjectForm handleSubmit={criarProjeto} btnText='Criar Projeto' />
         </div>
     )
 }
