@@ -26,6 +26,15 @@
         "id": "2",
         "name": "Desenvolvimento"
       }
+    },
+    {
+      "id": "bb41",
+      "name": "Clijo!",
+      "budget": "1",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      }
     }
   ],
   "categories": [
