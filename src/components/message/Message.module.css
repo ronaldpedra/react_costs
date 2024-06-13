@@ -1,8 +1,12 @@
 .alert {
-    padding: .75rem 1.25rem;
+    padding: .5rem 1.25rem;
     margin-top: 1rem;
     border: 1px solid transparent;
     border-radius: .25rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .success {
     color: #155724;
@@ -14,4 +18,12 @@
     color: #721c24;
     background-color: #f8d7da;
     border-color: #f5c6cb;
+}
+
+.alert svg {
+    font-size: 40px;
+}
+
+.alert h4 {
+    margin-left: 1em;
 }

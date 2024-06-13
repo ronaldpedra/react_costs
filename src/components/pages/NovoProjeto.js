@@ -3,11 +3,30 @@ import ProjectForm from "../projectForm/ProjectForm"
 import styles from "./css/NovoProjeto.module.css"
 import Message from "../message/Message"
 
+
 function NovoProjeto() {
 
     const [message, setMessage] = useState({})
 
-    function criarProjeto() { }
+    function criarProjeto(project) {
+        fetch('http://localhost:5000/projects', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(project)
+        })
+        .then((resp) => resp.json())
+        .then((data) => {
+            console.log(data)
+            setMessage({
+                type: 'success',
+                text: `Projeto ${project.name} criado com sucesso`
+                
+            })
+        })
+        .catch((err) => console.log(err))
+    }
 
     return (
         <div className={styles.novoprojeto_container}>

@@ -1,32 +1,36 @@
-import { useEffect, useState } from "react"
-import styles from "./Message.module.css"
+import { useEffect, useState } from "react";
+import styles from "./Message.module.css";
+import { CgDanger } from "react-icons/cg";
+import { TiInputChecked } from "react-icons/ti";
+
 function Message({ type, text, setMessage }) {
+  const [visible, setVisible] = useState(false);
 
-    const [visible, setVisible] = useState(false)
+  useEffect(() => {
+    if (!text) {
+      setVisible(false);
+    }
+    setVisible(true);
 
-    useEffect(() => {
+    const timer = setTimeout(() => {
+      setVisible(false);
+      setMessage({});
+    }, 5000);
 
-        if (!text) {
-            setVisible(false)
-        }
-        setVisible(true)
+    return () => clearTimeout(timer);
+  }, [text, setMessage]);
 
-        const timer = setTimeout(() => {
-            setVisible(false)
-            setMessage({})
-        }, 60000)
-
-        return () => clearTimeout(timer)
-
-    }, [text, setMessage])
-
-    return (
-        <>
-            {visible && (
-                <div className={`${styles.alert} ${styles[type]}`}>{text}</div>
-            )}
-        </>
-    )
+  return (
+    <>
+      {visible && (
+        <div className={`${styles.alert} ${styles[type]}`}>
+          {type === "success" && <TiInputChecked />}
+          {type === "danger" && <CgDanger />}
+          <h4>{text}</h4>
+        </div>
+      )}
+    </>
+  );
 }
 
-export default Message
+export default Message;
