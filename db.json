@@ -8,6 +8,24 @@
         "id": "1",
         "name": "Infra"
       }
+    },
+    {
+      "id": "8e8f",
+      "name": "Clijo!",
+      "budget": "1",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      }
+    },
+    {
+      "id": "6f28",
+      "name": "Clijo!",
+      "budget": "2",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      }
     }
   ],
   "categories": [

@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
 import ProjectForm from "../projectForm/ProjectForm"
 import styles from "./css/NovoProjeto.module.css"
 import Message from "../message/Message"
@@ -7,6 +8,7 @@ import Message from "../message/Message"
 function NovoProjeto() {
 
     const [message, setMessage] = useState({})
+    const navigate = useNavigate()
 
     function criarProjeto(project) {
         fetch('http://localhost:5000/projects', {
@@ -22,8 +24,8 @@ function NovoProjeto() {
             setMessage({
                 type: 'success',
                 text: `Projeto ${project.name} criado com sucesso`
-                
             })
+            navigate('/projetos', {message})
         })
         .catch((err) => console.log(err))
     }
