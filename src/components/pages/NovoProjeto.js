@@ -19,13 +19,9 @@ function NovoProjeto() {
             body: JSON.stringify(project)
         })
         .then((resp) => resp.json())
-        .then((data) => {
-            console.log(data)
-            setMessage({
-                type: 'success',
-                text: `Projeto ${project.name} criado com sucesso`
-            })
-            navigate('/projetos', {message})
+        .then(() => {
+            const state = {'type':'success', 'text':`Projeto ${project.name} criado com sucesso`}
+            navigate('/projetos', {state})
         })
         .catch((err) => console.log(err))
     }

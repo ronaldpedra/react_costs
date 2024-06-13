@@ -4,7 +4,8 @@ import { CgDanger } from "react-icons/cg";
 import { TiInputChecked } from "react-icons/ti";
 
 function Message({ type, text, setMessage }) {
-  const [visible, setVisible] = useState(false);
+  
+  const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     if (!text) {
