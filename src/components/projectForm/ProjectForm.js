@@ -28,9 +28,13 @@ function ProjectForm({ handleSubmit, projectData, btnText, setMessage }) {
         e.preventDefault()
         if (validateOnSubmit(project)) {
             // handleSubmit()
+            console.log(project)
         } else {
             console.log('entrou')
-            setMessage('Preencha todos os campos para Criar o Projeto.')
+            setMessage({
+                type: 'danger',
+                text: 'Preencha todos os campos.'
+            })
         }
     }
 
