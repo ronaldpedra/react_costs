@@ -4,12 +4,11 @@ import Input from "../input/Input"
 import Select from "../select/Select"
 import styles from "./ProjectForm.module.css"
 
-function ProjectForm({ handleSubmit, projectData, btnText }) {
+function ProjectForm({ handleSubmit, projectData, btnText, setMessage }) {
 
     // Populando a lista de opções do select
     const [categories, setCategories] = useState([])
     const [project, setProject] = useState(projectData || {})
-    const [message, setMessage] = useState('')
 
     useEffect(() => {
         fetch('http://localhost:5000/categories', {
@@ -30,9 +29,9 @@ function ProjectForm({ handleSubmit, projectData, btnText }) {
         if (validateOnSubmit(project)) {
             // handleSubmit()
         } else {
-            setMessage('É necessário preencher todos os campos para Criar o Projeto.')
+            console.log('entrou')
+            setMessage('Preencha todos os campos para Criar o Projeto.')
         }
-        
     }
 
     function validateOnSubmit(project) {
