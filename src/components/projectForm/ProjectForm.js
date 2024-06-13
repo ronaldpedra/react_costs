@@ -9,6 +9,7 @@ function ProjectForm({ handleSubmit, projectData, btnText }) {
     // Populando a lista de opções do select
     const [categories, setCategories] = useState([])
     const [project, setProject] = useState(projectData || {})
+    const [message, setMessage] = useState('')
 
     useEffect(() => {
         fetch('http://localhost:5000/categories', {
@@ -26,16 +27,39 @@ function ProjectForm({ handleSubmit, projectData, btnText }) {
 
     function submit(e) {
         e.preventDefault()
-        // handleSubmit()
-        console.log(project)
+        if (validateOnSubmit(project)) {
+            // handleSubmit()
+        } else {
+            setMessage('É necessário preencher todos os campos para Criar o Projeto.')
+        }
+        
+    }
+
+    function validateOnSubmit(project) {
+        if (!project.name) {
+            return false
+        }
+        if (project.budget <= 0) {
+            return false
+        }
+        if (project.category.id === '0') {
+            return false
+        }
+        return true
     }
 
     function handleChange(e) {
         setProject({ ...project, [e.target.name]: e.target.value })
     }
 
-    
-
+    function handleCategory(e) {
+        setProject({
+            ...project, category: {
+                id: e.target.value,
+                name: e.target.options[e.target.selectedIndex].text
+            }
+        })
+    }
 
     return (
         <form onSubmit={submit} className={styles.form_container}>
