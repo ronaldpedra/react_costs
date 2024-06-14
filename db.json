@@ -1,41 +1,21 @@
 {
   "projects": [
     {
-      "id": "2d44",
-      "name": "Ronald",
-      "budget": 1000,
+      "id": "fc3e",
+      "name": "teste",
+      "budget": "2",
       "category": {
-        "id": "1",
-        "name": "Infra"
-      },
-      "cost": 0,
-      "services": []
-    },
-    {
-      "id": "f3f9",
-      "name": "Clijo!",
-      "budget": "200",
-      "category": {
-        "id": "1",
-        "name": "Infra"
+        "id": "3",
+        "name": "Design"
       }
     },
     {
-      "id": "5692",
-      "name": "Clijo!",
-      "budget": "300",
+      "id": "73cc",
+      "name": "Joana Linzmayer",
+      "budget": "3",
       "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
-      }
-    },
-    {
-      "id": "4a6b",
-      "name": "Site Hades",
-      "budget": "30000",
-      "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
+        "id": "3",
+        "name": "Design"
       }
     }
   ],

@@ -8,16 +8,15 @@ import ProjectCard from "../projectCard/ProjectCard";
 
 function Projetos() {
   const location = useLocation();
-  const [message, setMessage] = useState({});
+  const [message, setMessage] = useState();
   const [projects, setProjects] = useState([]);
 
-  let mensagem
-  if (location.state) {
-    mensagem = location.state;
-  }
-
-  console.log(mensagem)
-
+  useEffect(() => {
+    const mensagem = location.state
+    if (mensagem) {
+      setMessage(mensagem)
+    }    
+  }, [])
 
   useEffect(() => {
     fetch("http://localhost:5000/projects", {
@@ -34,13 +33,32 @@ function Projetos() {
       .catch((err) => console.log(err));
   }, []);
 
+  function removeProject(id) {
+    setMessage()
+    fetch(`http://localhost:5000/projects/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then(resp => resp.json())
+    .then(() => {
+      setProjects(projects.filter((project) => project.id != id))
+      setMessage({
+        type: 'success',
+        text: 'Projeto removido com sucesso!'
+      })
+    })
+    .catch(err => console.log(err))
+  }
+
   return (
     
     <div className={styles.project_container}>
-      {mensagem && (
+      {message && (
         <Message
-          type={mensagem.type}
-          text={mensagem.text}
+          type={message.type}
+          text={message.text}
           setMessage={setMessage}
         />
       )}
@@ -57,10 +75,13 @@ function Projetos() {
               name={project.name}
               budget={project.budget}
               category={project.category.name}
-              handleRemove={""}
+              handleRemove={removeProject}
               key={project.id}
             />
           ))}
+          {projects.length === 0 && (
+            <p>Não há projetos cadastrados.</p>
+          )}
       </Container>
     </div>
   );

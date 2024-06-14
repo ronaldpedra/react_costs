@@ -4,7 +4,7 @@ import { BsFillTrashFill, BsPencil } from "react-icons/bs";
 
 function ProjectCard({ id, name, budget, category, handleRemove }) {
 
-  
+
 
   function moeda(valor) {
     var valorMoeda = Intl.NumberFormat("pt-br", {
@@ -16,7 +16,7 @@ function ProjectCard({ id, name, budget, category, handleRemove }) {
 
   function remove(e) {
     e.preventDefault()
-
+    handleRemove(id)
   }
 
   return (
