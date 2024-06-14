@@ -87,7 +87,7 @@ function ProjectForm({ handleSubmit, projectData, btnText, setMessage }) {
                 handleOnChange={handleCategory}
                 value={project.category ? project.category.id : ''}
             />
-            <SubmitButton text={btnText} />
+            <SubmitButton text={btnText} customClass='project_form_linkbutton' />
         </form>
     )
 }
