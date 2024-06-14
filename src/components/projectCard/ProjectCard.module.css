@@ -58,3 +58,46 @@
     background-color: blue;
 }
 
+.project_card_actions {
+    display: flex;
+    gap: 12px;
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+.project_card_actions a:hover {
+    color: #ffbb33;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.project_card_actions button:hover {
+    color: #ffbb33;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.project_card_actions a {
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #222;
+    padding: 0.5em;
+    color: #fff;
+    background-color: #222;
+    transition: 0.5s;
+}
+
+.project_card_actions button {
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #222;
+    padding: 0.5em;
+    color: #fff;
+    background-color: #222;
+    font-size: 16px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.project_card_actions svg {
+    margin-right: 5px;
+}

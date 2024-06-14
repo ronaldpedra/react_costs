@@ -7,7 +7,7 @@ import Message from "../message/Message"
 
 function NovoProjeto() {
 
-    const [message, setMessage] = useState({})
+    const [message, setMessage] = useState()
     const navigate = useNavigate()
 
     function criarProjeto(project) {
