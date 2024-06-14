@@ -3,6 +3,9 @@ import styles from "./ProjectCard.module.css";
 import { BsFillTrashFill, BsPencil } from "react-icons/bs";
 
 function ProjectCard({ id, name, budget, category, handleRemove }) {
+
+  
+
   function moeda(valor) {
     var valorMoeda = Intl.NumberFormat("pt-br", {
       style: "currency",
@@ -11,7 +14,11 @@ function ProjectCard({ id, name, budget, category, handleRemove }) {
     return valorMoeda;
   }
 
-  function remove() {}
+  function remove(e) {
+    e.preventDefault()
+
+  }
+
   return (
     <div className={styles.project_card_container}>
       <h4>{name}</h4>
@@ -23,7 +30,7 @@ function ProjectCard({ id, name, budget, category, handleRemove }) {
         {category}
       </p>
       <div className={styles.project_card_actions}>
-        <Link to={`/project/${id}`}>
+        <Link to={`/projeto/${id}`}>
           <BsPencil /> Editar
         </Link>
         <button onClick={remove}>

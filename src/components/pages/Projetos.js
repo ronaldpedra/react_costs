@@ -35,6 +35,7 @@ function Projetos() {
   }, []);
 
   return (
+    
     <div className={styles.project_container}>
       {mensagem && (
         <Message

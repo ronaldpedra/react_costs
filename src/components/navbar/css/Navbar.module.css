@@ -1,8 +1,8 @@
 .navbar_container {
-    /* display: flex; */
-    /* justify-content: space-between; */
+    display: flex;
+    justify-content: space-between;
     padding: 1em 0;
-    width: 1200px;
+    width: 100%;
 }
 
 .navbar_container ul {
