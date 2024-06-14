@@ -4,6 +4,12 @@
     border-radius: 5px;
     width: 24%;
     margin: 0.5%;
+    transition: 0.5s;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+
+.project_card_container:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .project_card_container h4 {
@@ -51,3 +57,4 @@
 .category_text .planejamento {
     background-color: blue;
 }
+
