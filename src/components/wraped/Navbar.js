@@ -4,11 +4,14 @@ import Logo from "../../img/costs_logo.png"
 
 export default function Navbar() {
     return (
-        <div className={styles.navbar_container}>
-            <img src={Logo} alt="Costs" />
-            <div>
-                <Link to='/'>Home</Link>
-            </div>
-        </div>
+        <nav className={styles.navbar_container}>
+            <Link to='/'><img src={Logo} alt="Costs" /></Link>
+            <ul>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/projects'>Projetos</Link></li>
+                <li><Link to='/company'>Empresa</Link></li>
+                <li><Link to='/contact'>Contato</Link></li>
+            </ul>
+        </nav>
     )
 }

@@ -5,6 +5,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    margin: 1em 0;
 }
 
 .navbar_container img {
@@ -12,5 +13,21 @@
 }
 
 .navbar_container ul {
-    
+    display: flex;
+    list-style: none;
+}
+
+.navbar_container li {
+    margin-left: 2em;
+}
+
+.navbar_container a {
+    color: var(--color-claro);
+    text-decoration: none;
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+.navbar_container a:hover {
+    color: var(--color-destaque);
 }
