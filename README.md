@@ -8,7 +8,7 @@ No caso de puxar do GitHub, na pasta do projeto, só digite (todas as dependênc
 
 Caso esteja criando do zero, na pasta pai:
 
-### `npm create-react-app react_costs`
+### `npx create-react-app react_costs`
 ### `npm update`
 
 ## Dependências
