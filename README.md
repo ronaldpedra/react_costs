@@ -25,6 +25,7 @@ Neste projeto, você poderá carregar:
 Na pasta do projeto
 
 ### `npm start`
+### `npm run backend`
 
 Carregue o app no modo de desenvolvimento.\
 Abra [http://localhost:3000](http://localhost:3000) para vê-la em seu navegarod.
