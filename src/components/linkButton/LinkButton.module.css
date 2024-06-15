@@ -6,14 +6,26 @@
     text-decoration: none;
     transition: 0.5s;
     width: 160px;
+    height: 40px;
     text-align: center;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .btn:hover {
     color: #ffbb33;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn:active {
+    box-shadow: none;
+    font-size: 12px;
 }
 
 .project_form_linkbutton {
     margin-top: 2em;
+}
+
+.service_form_linkbutton {
+    margin-top: 2em;
+    font-size: 14px;
 }

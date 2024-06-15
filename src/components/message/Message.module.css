@@ -27,3 +27,8 @@
 .alert h4 {
     margin-left: 1em;
 }
+
+.update_message {
+    width: 100%;
+    margin-bottom: 1em;
+}

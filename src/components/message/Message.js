@@ -3,7 +3,7 @@ import styles from "./Message.module.css";
 import { CgDanger } from "react-icons/cg";
 import { TiInputChecked } from "react-icons/ti";
 
-function Message({ type, text, setMessage }) {
+function Message({ type, text, setMessage, customClass }) {
   
   const [visible, setVisible] = useState(false)
 
@@ -16,7 +16,7 @@ function Message({ type, text, setMessage }) {
     const timer = setTimeout(() => {
       setVisible(false);
       setMessage();
-    }, 3000);
+    }, 5000);
 
     return () => clearTimeout(timer);
   }, [text, setMessage]);
@@ -24,7 +24,7 @@ function Message({ type, text, setMessage }) {
   return (
     <>
       {visible && (
-        <div className={`${styles.alert} ${styles[type]}`}>
+        <div className={`${styles.alert} ${styles[type]} ${styles[customClass]}`}>
           {type === "success" && <TiInputChecked />}
           {type === "danger" && <CgDanger />}
           <h4>{text}</h4>

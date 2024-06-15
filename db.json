@@ -1,22 +1,39 @@
 {
   "projects": [
     {
-      "id": "fc3e",
-      "name": "teste",
-      "budget": "2",
+      "id": "3e49",
+      "name": "Clijo! Atualizado",
+      "budget": "1300",
       "category": {
-        "id": "3",
-        "name": "Design"
-      }
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 1300,
+      "services": [
+        {
+          "name": "Viagem para as Maldivas",
+          "cost": "1200",
+          "description": "Viagem para as Maldivas com Meu Amor e nossa linda família.",
+          "id": "15d7076b-1d21-4724-9daf-78062d9b190b"
+        },
+        {
+          "name": "Jantar Romântico",
+          "cost": "100",
+          "description": "Jantar Romântico a luz de velas com Meu Amor. vamos tomar vinho e nos divertir muito. Talvés o quequé vá junto, porque ele é muito ciumento.",
+          "id": "e997c15d-baaa-420a-b237-bd032797f761"
+        }
+      ]
     },
     {
-      "id": "73cc",
-      "name": "Joana Linzmayer",
-      "budget": "3",
+      "id": "e3b3",
+      "name": "Amar meu amor",
+      "budget": 100000000,
       "category": {
-        "id": "3",
-        "name": "Design"
-      }
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": []
     }
   ],
   "categories": [

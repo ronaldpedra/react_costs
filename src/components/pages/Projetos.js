@@ -16,7 +16,7 @@ function Projetos() {
     if (mensagem) {
       setMessage(mensagem)
     }    
-  }, [])
+  }, [location.state])
 
   useEffect(() => {
     fetch("http://localhost:5000/projects", {
@@ -43,7 +43,7 @@ function Projetos() {
     })
     .then(resp => resp.json())
     .then(() => {
-      setProjects(projects.filter((project) => project.id != id))
+      setProjects(projects.filter((project) => project.id !== id))
       setMessage({
         type: 'success',
         text: 'Projeto removido com sucesso!'
