@@ -1,0 +1,9 @@
+:root {
+    /* background-color */
+    --fundo-escuro: #222;
+    --fundo-claro: #efefef;
+
+    /* font-color */
+    --color-claro: #fff;
+    --color-destaque: #ffbb33;
+}

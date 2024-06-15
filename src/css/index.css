@@ -1,11 +1,14 @@
+@import "./variaveis.css";
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;
+    border: none;
 }
 
 html, body, #root {
-    background-color: #efefef;
+    background-color: var(--fundo-claro);
     height: 100%;
 }

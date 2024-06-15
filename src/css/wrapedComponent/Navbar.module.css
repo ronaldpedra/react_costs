@@ -1,0 +1,16 @@
+@import "../variaveis.css";
+
+.navbar_container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar_container img {
+    height: 64px;
+}
+
+.navbar_container ul {
+    
+}
