@@ -101,3 +101,9 @@
 .project_card_actions svg {
     margin-right: 5px;
 }
+
+.service_card_column_space_between {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}

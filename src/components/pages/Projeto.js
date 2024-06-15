@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid"
-import { useEffect, useState } from "react"
+import { Suspense, useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import styles from "./css/Projeto.module.css"
 import Container from "../layout/Container"
@@ -7,6 +7,7 @@ import ProjectForm from "../projectForm/ProjectForm"
 import Message from "../message/Message"
 import ServiceForm from "../serviceform/ServiceForm"
 import ServiceCard from "../serviceCard/ServiceCard"
+
 
 function Projeto() {
 
@@ -32,7 +33,7 @@ function Projeto() {
                     setServices(data.services)
                 })
                 .catch(err => console.log(err))
-        }, 500)
+        }, 60000)
 
     }, [id])
 
@@ -111,93 +112,125 @@ function Projeto() {
             },
             body: JSON.stringify(project)
         })
-        .then(resp => resp.json)
-        .then((data) => {
-            console.log(data)
-            setMessage({
-                type: 'success',
-                text: 'Serviço cadastrado com sucesso!'
+            .then(resp => resp.json)
+            .then((data) => {
+                console.log(data)
+                setMessage({
+                    type: 'success',
+                    text: 'Serviço cadastrado com sucesso!'
+                })
+                setShowServiceForm(!showServiceForm)
             })
-            setShowServiceForm(!showServiceForm)
-        })
-        .catch(err => console.log(err))
+            .catch(err => console.log(err))
     }
 
-    function removeService() {
-        
+    function removeService(id, cost) {
+        console.log(id, cost)
+
+        const servicesUpdated = project.services.filter(
+            (service) => service.id !== id
+        )
+
+        const projectUpdated = project
+        projectUpdated.services = servicesUpdated
+        projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
+
+        fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(projectUpdated)
+        })
+            .then(resp => resp.json())
+            .then((data) => {
+                setProject(projectUpdated)
+                setServices(servicesUpdated)
+                setMessage({
+                    type: 'success',
+                    text: 'Serviço removido com sucesso!'
+                })
+            })
+            .catch(err => console.log(err))
+    }
+
+    function Loading() {
+        return <h2>Loading...</h2>
     }
 
     return (
         <>
-            {project.name ? (
-                <div className={styles.project_details}>
-                    <Container customClass='column'>
-                        {message && (
-                            <Message customClass='update_message'
-                                type={message.type}
-                                text={message.text}
-                                setMessage={setMessage}
-                            />
-                        )}
-                        <div className={styles.details_container}>
-                            <h1>Projeto: {project.name}</h1>
-                            <button className={styles.btn} onClick={toggleProjectForm}>
-                                {!showProjectForm ? 'Editar Projeto' : 'Fechar'}
-                            </button>
-                            {!showProjectForm ? (
-                                <div className={styles.project_info}>
-                                    <p>
-                                        <span>Categoria:</span> {project.category.name}
-                                    </p>
-                                    <p>
-                                        <span>Total de Orçamento:</span> {moeda(project.budget)}
-                                    </p>
-                                    <p>
-                                        <span>Total Utilizado:</span> {moeda(project.cost)}
-                                    </p>
-                                </div>
-                            ) : (
-                                <div className={styles.project_info}>
-                                    <ProjectForm
-                                        handleSubmit={editPost}
-                                        btnText='Concluir Edição'
-                                        projectData={project} />
-                                </div>
+            <Suspense fallback={<Loading />}>
+                {project.name && (
+                    <div className={styles.project_details}>
+                        <Container customClass='column'>
+                            {message && (
+                                <Message customClass='update_message'
+                                    type={message.type}
+                                    text={message.text}
+                                    setMessage={setMessage}
+                                />
                             )}
-                        </div>
-                        <div className={styles.service_form_container}>
-                            <h2>Adicionar Serviços</h2>
-                            <button className={styles.btn} onClick={toggleServiceForm}>
-                                {!showServiceForm ? 'Adicionar Serviço' : 'Fechar'}
-                            </button>
-                            {showServiceForm && (
-                                <div className={styles.project_info}>
-                                    <ServiceForm
-                                        handleSubmit={createService}
-                                        btnText={'Adicionar Serviço'}
-                                        projectData={project} />
-                                </div>
-                            )}
-                        </div>
-                        <h2>Serviços</h2>
-                        <Container customClass='start'>
-                            {services.length > 0 && (
-                                services.map((service) => (
-                                    <ServiceCard
-                                    name={service.name}
-                                    cost={service.cost}
-                                    description={service.description}
-                                    key={service.id}
-                                    handleRemove={removeService} />
-                                ))
-                            )}
-                            {services.length === 0 && <p>Não há serviços cadastrados.</p>}
+                            <div className={styles.details_container}>
+                                <h1>Projeto: {project.name}</h1>
+                                <button className={styles.btn} onClick={toggleProjectForm}>
+                                    {!showProjectForm ? 'Editar Projeto' : 'Fechar'}
+                                </button>
+                                {!showProjectForm ? (
+                                    <div className={styles.project_info}>
+                                        <p>
+                                            <span>Categoria:</span> {project.category.name}
+                                        </p>
+                                        <p>
+                                            <span>Total de Orçamento:</span> {moeda(project.budget)}
+                                        </p>
+                                        <p>
+                                            <span>Total Utilizado:</span> {moeda(project.cost)}
+                                        </p>
+                                    </div>
+                                ) : (
+                                    <div className={styles.project_info}>
+                                        <ProjectForm
+                                            handleSubmit={editPost}
+                                            btnText='Concluir Edição'
+                                            projectData={project} />
+                                    </div>
+                                )}
+                            </div>
+                            <div className={styles.service_form_container}>
+                                <h2>Adicionar Serviços</h2>
+                                <button className={styles.btn} onClick={toggleServiceForm}>
+                                    {!showServiceForm ? 'Adicionar Serviço' : 'Fechar'}
+                                </button>
+                                {showServiceForm && (
+                                    <div className={styles.project_info}>
+                                        <ServiceForm
+                                            handleSubmit={createService}
+                                            btnText={'Adicionar Serviço'}
+                                            projectData={project} />
+                                    </div>
+                                )}
+                            </div>
+                            <h2>Serviços</h2>
+                            <Container customClass='start'>
+                                {services.length > 0 && (
+                                    services.map((service) => (
+                                        <ServiceCard
+                                            id={service.id}
+                                            name={service.name}
+                                            cost={service.cost}
+                                            description={service.description}
+                                            key={service.id}
+                                            handleRemove={removeService}
+                                            customClass={'service_card_column_space_between'} />
+                                    ))
+                                )}
+                                {services.length === 0 && <p>Não há serviços cadastrados.</p>}
+                            </Container>
                         </Container>
-                    </Container>
-                </div>
-            ) : (
-                <h2>Carregando...</h2>
-            )}
+                    </div>
+                )}
+            </Suspense>
         </>
     )
 }
