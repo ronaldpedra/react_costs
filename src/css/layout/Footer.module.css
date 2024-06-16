@@ -1,7 +1,7 @@
 @import "../variaveis.css";
 
 .footer_container {
-    background-color: var(--fundo-escuro);
+    background-color: var(--background-escuro);
     color: var(--color-claro);
 }
 
@@ -21,7 +21,22 @@
 }
 
 .footer_container_itens li {
-    font-size: var(--fonte-size-medio);
+    font-size: var(--font-size-grande);
     padding: 0 0.5em;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+.footer_container_itens li:hover {
+    color: var(--color-destaque);
+}
+
+.footer_container_itens a {
+    color: var(--color-claro);
+    text-decoration: none;
+}
+
+.footer_container_itens span {
+    color: var(--color-destaque);
+    font-weight: bold;
 }

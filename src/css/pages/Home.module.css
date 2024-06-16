@@ -20,7 +20,7 @@
 
 .home_container span {
     color: var(--color-destaque);
-    background-color: var(--fundo-escuro);
+    background-color: var(--background-escuro);
     padding: 0.2em;
 }
 

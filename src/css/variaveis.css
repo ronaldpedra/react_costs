@@ -1,17 +1,20 @@
 :root {
     /* background-color */
-    --fundo-escuro: #222;
-    --fundo-claro: #efefef;
+    --background-escuro: #222;
+    --background-claro: #efefef;
 
     /* font-color */
     --color-default: black;
     --color-claro: #fff;
     --color-gray: gray;
     --color-destaque: #ffbb33;
-    --fonte-size-medio: 20px;
-    --fonte-size-pequeno: 16px;
-    --fonte-size-menor: 12px;
 
-    /* Botão */
-    --botao-width: 160px;
+    /* font-size */
+    --font-size-grande: 24px;
+    --font-size-medio: 20px;
+    --font-size-pequeno: 16px;
+    --font-size-menor: 12px;
+
+    /* Button */
+    --button-width: 160px;
 }

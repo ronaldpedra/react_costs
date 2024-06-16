@@ -1,6 +1,6 @@
 @import "../variaveis.css";
 
 .main_container {
-    background-color: var(--fundo-claro);
+    background-color: var(--background-claro);
     color: var(--color-gray);
 }

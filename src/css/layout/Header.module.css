@@ -1,6 +1,6 @@
 @import "../variaveis.css";
 
 .header_container {
-    background-color: var(--fundo-escuro);
+    background-color: var(--background-escuro);
     color: var(--color-claro);
 }

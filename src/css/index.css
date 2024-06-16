@@ -9,6 +9,6 @@
 }
 
 html, body, #root {
-    background-color: var(--fundo-claro);
+    background-color: var(--background-claro);
     height: 100%;
 }

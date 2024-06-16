@@ -1,14 +1,13 @@
 .btn {
-
-    padding: 0.5em 1em;
-    background-color: var(--fundo-escuro);
+    background-color: var(--background-escuro);
+    font-size: var(--font-size-pequeno);
     color: var(--color-claro);
+    width: var(--button-width);
+    padding: 0.5em 1em;
     text-decoration: none;
     transition: 0.5s;
-    width: var(--botao-width);
     height: 40px;
     text-align: center;
-    font-size: var(--fonte-size-pequeno);
     cursor: pointer;
 }
 
@@ -18,6 +17,6 @@
 }
 
 .btn:active {
+    font-size: var(--font-size-menor);
     box-shadow: none;
-    font-size: var(--fonte-size-menor);
 }
