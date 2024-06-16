@@ -11,7 +11,7 @@ export default function Home() {
                 to={'/'}
                 text={'Criar Projeto'}
             />
-            <Savings/>
+            <img src={Savings} alt="Savings" />
 
         </div>
     )
