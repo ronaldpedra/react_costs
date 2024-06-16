@@ -1,8 +1,16 @@
-export default function Input({ name, inputLabel, type, id, placeholder }) {
+import styles from "../../css/singleComponent/Input.module.css"
+
+export default function Input({ name, inputLabel, type, placeholder, handleOnChange, value }) {
     return (
-        <div>
+        <div className={styles.input_container}>
             <label htmlFor={name}>{inputLabel}</label>
-            <input type={type} name={name} id={id} placeholder={placeholder} />
+            <input
+                type={type}
+                name={name}
+                placeholder={placeholder}
+                onChange={handleOnChange}
+                value={value}
+            />
         </div>
     )
 }
