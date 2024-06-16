@@ -1,5 +1,6 @@
 import styles from "../../css/pages/Home.module.css"
 import LinkButton from "../single/LinkButton"
+import Savings from "../../img/savings.svg"
 
 export default function Home() {
     return (
@@ -10,6 +11,8 @@ export default function Home() {
                 to={'/'}
                 text={'Criar Projeto'}
             />
+            <Savings/>
+
         </div>
     )
 }
