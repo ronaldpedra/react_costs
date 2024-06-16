@@ -33,7 +33,7 @@ function Projeto() {
                     setServices(data.services)
                 })
                 .catch(err => console.log(err))
-        }, 60000)
+        }, 1000)
 
     }, [id])
 
