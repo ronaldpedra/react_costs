@@ -1,9 +1,11 @@
 .btn {
-    /* width: var(--botao-width); */
+    width: var(--botao-width);
+    height: 50px;
     font-size: var(--fonte-size-medio);
     text-decoration: none;
     border: 1px solid #222;
     text-align: center;
+    
     padding: 0.5em;
     color: var(--color-claro);
     background-color: var(--fundo-escuro);
@@ -12,5 +14,11 @@
 }
 
 .btn:hover {
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    color: #ffbb33;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.btn:active {
+    box-shadow: none;
+    font-size: var(--fonte-size-pequeno);
 }

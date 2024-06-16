@@ -7,7 +7,7 @@ export default function Home() {
             <h4>Bem-vindo ao Costs</h4>
             <p>Crie, Planeje e Gerencie seus projetos aqui!!!</p>
             <LinkButton
-                to={'/createproject'}
+                to={'/'}
                 text={'Criar Projeto'}
             />
         </div>
