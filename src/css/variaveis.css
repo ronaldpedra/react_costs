@@ -6,4 +6,8 @@
     /* font-color */
     --color-claro: #fff;
     --color-destaque: #ffbb33;
+    --fonte-size-medio: 20px;
+
+    /* Botão */
+    --botao-width: 160px;
 }
