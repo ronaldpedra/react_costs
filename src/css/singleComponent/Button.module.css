@@ -1,3 +1,9 @@
+.btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1em 0;
+}
 .btn {
     background-color: var(--background-escuro);
     font-size: var(--font-size-pequeno);

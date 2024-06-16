@@ -9,6 +9,6 @@
 }
 
 html, body, #root {
-    background-color: var(--background-claro);
+    background-color: var(--background-cinza);
     height: 100%;
 }

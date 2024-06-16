@@ -1,12 +1,13 @@
 :root {
     /* background-color */
     --background-escuro: #222;
-    --background-claro: #efefef;
+    --background-cinza: #efefef;
+    --background-branco: #fff;
 
     /* font-color */
     --color-default: black;
     --color-claro: #fff;
-    --color-gray: gray;
+    --color-gray: #7b7b7b;
     --color-destaque: #ffbb33;
 
     /* font-size */

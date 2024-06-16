@@ -1,19 +1,19 @@
 @import "../variaveis.css";
 
-.input_container {
+.select_container {
     display: flex;
     width: 100%;
     flex-direction: column;
     margin: 1em 0;
 }
 
-.input_container label {
+.select_container label {
     color: var(--color-default);
     font-size: var(--font-size-medio);
     font-weight: bold;
 }
 
-.input_container input {
+.select_container select {
     margin-top: 0.5em;
     padding: 6px 12px;
     font-size: var(--font-size-pequeno);
@@ -28,7 +28,7 @@
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.input_container input:focus {
+.select_container select:focus {
     color: var(--color-default);
     background-color: var(--background-branco);
     border-color: var(--color-destaque);
