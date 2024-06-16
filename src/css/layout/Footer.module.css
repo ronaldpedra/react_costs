@@ -4,3 +4,24 @@
     background-color: var(--fundo-escuro);
     color: var(--color-claro);
 }
+
+.footer_container_itens {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 0;
+}
+
+.footer_container_itens ul {
+    display: flex;
+    list-style: none;
+    margin-bottom: 1em;
+}
+
+.footer_container_itens li {
+    font-size: var(--fonte-size-medio);
+    padding: 0 0.5em;
+    cursor: pointer;
+}

@@ -5,14 +5,13 @@ import Savings from "../../img/savings.svg"
 export default function Home() {
     return (
         <div className={styles.home_container}>
-            <h4>Bem-vindo ao Costs</h4>
+            <h1>Bem-vindo ao <span>Costs</span></h1>
             <p>Crie, Planeje e Gerencie seus projetos aqui!!!</p>
             <LinkButton
-                to={'/'}
+                to={'/newproject'}
                 text={'Criar Projeto'}
             />
             <img src={Savings} alt="Savings" />
-
         </div>
     )
 }

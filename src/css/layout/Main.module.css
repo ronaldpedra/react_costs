@@ -1,5 +1,6 @@
 @import "../variaveis.css";
 
 .main_container {
-    height: 100%;
+    background-color: var(--fundo-claro);
+    color: var(--color-gray);
 }

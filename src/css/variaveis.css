@@ -4,7 +4,9 @@
     --fundo-claro: #efefef;
 
     /* font-color */
+    --color-default: black;
     --color-claro: #fff;
+    --color-gray: gray;
     --color-destaque: #ffbb33;
     --fonte-size-medio: 20px;
     --fonte-size-pequeno: 16px;
