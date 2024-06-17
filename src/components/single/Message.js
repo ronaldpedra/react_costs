@@ -1,5 +1,5 @@
 export default function Message({ type, text }) {
     return (
-        <div>Mensagem</div>
+        <div>{type} {text}</div>
     )
 }

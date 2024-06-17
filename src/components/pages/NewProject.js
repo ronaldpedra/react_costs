@@ -24,8 +24,8 @@ export default function NewProject() {
             .then((data) => {
                 // message
                 // redirect
-                const state = {type: 'success', text: 'Projeto criado com sucesso!'}
-                navigate('/projects', state)
+                const state = {"type": 'success', "text": 'Projeto criado com sucesso!'}
+                navigate('/projects', {state})
             })
             .catch((err) => console.log(err))
     }

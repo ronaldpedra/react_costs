@@ -4,15 +4,20 @@ import Container from "../layout/Container";
 import Message from "../single/Message";
 
 export default function Projects() {
-    
+
     const location = useLocation()
-    const [message, setMessage] = useState()
+    const [message, setMessage] = useState({})
+    const [showMessage, setShowMessage] = useState(false)
 
     useEffect(() => {
         if (location.state) {
+            setTimeout()
             setMessage(location.state)
         }
     }, [location.state])
+
+    console.log(message)
+
 
     return (
         <Container>
