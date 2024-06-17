@@ -11,6 +11,7 @@ export default function Projects() {
 
     const [projects, setProjects] = useState([])
     const [removeLoading, setRemoveLoading] = useState(false)
+    const [removeProjectMessage, setRemoveProjectMessage] = useState({})
 
     useEffect(() => {
         setTimeout(() => {
@@ -44,7 +45,11 @@ export default function Projects() {
         })
         .then((resp) => resp.json())
         .then(() => {
-            setProjects(projects.filter())
+            setProjects(projects.filter((project) => project.id !== id))
+            setRemoveProjectMessage({
+                type: 'success',
+                text: 'Projeto removido com sucesso!'
+            })
         })
         .catch((err) => console.log(err))
 
@@ -58,12 +63,8 @@ export default function Projects() {
                     <LinkButton to='/newproject' text='Novo Projeto' />
                 </div>
                 <div className={styles.message}>
-                    {message && (
-                        <Message
-                            type={message.type}
-                            text={message.text}
-                        />
-                    )}
+                    {message && (<Message type={message.type} text={message.text} />)}
+                    {removeProjectMessage && (<Message type={removeProjectMessage.type} text={removeProjectMessage.text} />)}
                 </div>
                 <Container customClass='start'>
                     {projects.length > 0 &&

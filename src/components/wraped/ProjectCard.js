@@ -14,8 +14,9 @@ export default function ProjectCard({
   btnText,
 }) {
 
-  function remover(id) {
-    
+  const remover = (e) => {
+    e.preventDefault()
+    handleRemove(id)
   }
 
   return (
@@ -34,7 +35,7 @@ export default function ProjectCard({
           <LinkButton to={linkTo} text={linkText} icon={<BsPencil />} />
         </div>
         <div className={styles.action}>
-          <Button onClick={remover} btnText={btnText} icon={<BsFillTrashFill />} />
+          <Button handleRemove={remover} btnText={btnText} icon={<BsFillTrashFill />} />
         </div>
       </div>
     </div>
