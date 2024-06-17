@@ -28,7 +28,7 @@ export default function ProjectCard({
           <LinkButton to={linkTo} text={linkText} />
         </div>
         <div className={styles.action}>
-          <BsFillTrashFill />
+            <BsFillTrashFill />
           <Button btnText={btnText} />
         </div>
       </div>
