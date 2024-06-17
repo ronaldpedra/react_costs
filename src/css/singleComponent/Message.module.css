@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    min-width: 1200px;
+    min-height: 43px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.info,
+.success,
+.warning,
+.error,
+.none {
+  margin: 10px 0;
+  padding: 10px 0;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.info {
+  color: #059;
+  background-color: #BEF;
+  border: 1px solid #059;
+}
+
+.success {
+  color: #270;
+  background-color: #DFF2BF;
+  border: 1px solid #270;
+
+}
+
+.warning {
+  color: #9F6000;
+  background-color: #FEEFB3;
+}
+
+.error {
+  color: #D8000C;
+  background-color: #FFBABA;
+}
