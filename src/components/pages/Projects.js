@@ -1,35 +1,29 @@
 import { useLocation } from "react-router-dom";
-import { useState, useEffect } from "react";
 import Container from "../layout/Container";
 import Message from "../single/Message";
+import styles from "../../css/pages/Projects.module.css"
 
 export default function Projects() {
 
     const location = useLocation()
-    const [message, setMessage] = useState({})
-    // const [showMessage, setShowMessage] = useState(false)
 
-    useEffect(() => {
-        if (location.state) {
-            setMessage(location.state)
-            window.history.replaceState({}, '')
-        }
-        const timer = setTimeout(() => {
-            setMessage({})
-        }, 2000)
-        return () => clearTimeout(timer)
-    }, [location.state])
+    let message = ''
+    if (location.state) {
+        message = location.state
+    }
 
     return (
         <Container>
-            <div>
+            <div className={styles.container}>
                 <h1>Projetos</h1>
+                <div className={styles.message}>
                 {message && (
                     <Message
                         type={message.type}
                         text={message.text}
                     />
                 )}
+                </div>
             </div>
         </Container>
     )

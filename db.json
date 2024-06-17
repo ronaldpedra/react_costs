@@ -186,6 +186,61 @@
       },
       "cost": 0,
       "services": []
+    },
+    {
+      "id": "de78",
+      "name": "Clijo! Atualizado",
+      "budget": "44",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "ef00",
+      "name": "Ronald Fernandes Pedra",
+      "budget": "2121",
+      "category": {
+        "id": "1",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "ec25",
+      "name": "Serviço 2",
+      "budget": "543",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "fd4d",
+      "name": "Serviço 2",
+      "budget": "322",
+      "category": {
+        "id": "2",
+        "name": "Desenvolvimento"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "237d",
+      "name": "teste",
+      "budget": "654",
+      "category": {
+        "id": "3",
+        "name": "Desing"
+      },
+      "cost": 0,
+      "services": []
     }
   ],
   "categories": [

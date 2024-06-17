@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    margin: 1em;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.container h1 {
+    color: var(--color-default);
+    align-items: start;
+}
+
+.message {
+    align-self: center;
+}
