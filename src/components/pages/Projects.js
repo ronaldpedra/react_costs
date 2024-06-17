@@ -11,9 +11,14 @@ export default function Projects() {
 
     useEffect(() => {
         if (location.state) {
-            setTimeout()
             setMessage(location.state)
+            setShowMessage(!showMessage)
         }
+        const timer = setTimeout(() => {
+            setShowMessage(!showMessage)
+            setMessage({})
+        }, 5000)
+        return () => clearTimeout(timer)
     }, [location.state])
 
     console.log(message)
