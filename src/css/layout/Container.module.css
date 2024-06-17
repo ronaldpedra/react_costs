@@ -1,18 +1,19 @@
 @import "../variaveis.css";
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    width: 100%;
-    /* height: 100%; */
-    max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 100%;
+  /* height: 100%; */
+  max-width: 1200px;
 }
 
 .start {
-    justify-content: start;
+  justify-content: start;
+  flex-wrap: wrap;
 }
 
 .center {
-    justify-content: center;
+  justify-content: center;
 }

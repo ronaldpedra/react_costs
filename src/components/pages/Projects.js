@@ -31,6 +31,10 @@ export default function Projects() {
         message = location.state
     }
 
+    function removeProject(id) {
+
+    }
+
     return (
         <Container>
             <div className={styles.container}>
@@ -55,10 +59,13 @@ export default function Projects() {
                                 budget={project.budget}
                                 category={project.category.name}
                                 key={project.id}
+                                linkTo={''}
+                                linkText={'Editar'}
+                                btnText={'Excluir'}
+                                handleRemove={removeProject}
                             />
                         ))
                     }
-
                 </Container>
             </div>
         </Container>

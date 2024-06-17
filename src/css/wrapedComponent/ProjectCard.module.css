@@ -52,3 +52,13 @@
 .category_text .planejamento {
     background-color: #fbe7c6;
 }
+
+.container .actions {
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.container .action {
+    width: 100px;
+}
