@@ -1,12 +1,31 @@
 import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 import Container from "../layout/Container";
 import Message from "../single/Message";
 import styles from "../../css/pages/Projects.module.css"
+import LinkButton from "../single/LinkButton";
+import ProjectCard from "../wraped/ProjectCard";
 
 export default function Projects() {
 
-    const location = useLocation()
+    const [projects, setProjects] = useState([])
 
+    useEffect(() => {
+        fetch(`http://localhost:5000/projects`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then((resp) => resp.json())
+            .then((data) => {
+                console.log(data)
+                setProjects(data)
+            })
+            .catch((err) => console.log(err))
+    }, [])
+
+    const location = useLocation()
     let message = ''
     if (location.state) {
         message = location.state
@@ -15,15 +34,32 @@ export default function Projects() {
     return (
         <Container>
             <div className={styles.container}>
-                <h1>Projetos</h1>
-                <div className={styles.message}>
-                {message && (
-                    <Message
-                        type={message.type}
-                        text={message.text}
-                    />
-                )}
+                <div className={styles.title_container}>
+                    <h1>Meus Projetos</h1>
+                    <LinkButton to='/newproject' text='Novo Projeto' />
                 </div>
+                <div className={styles.message}>
+                    {message && (
+                        <Message
+                            type={message.type}
+                            text={message.text}
+                        />
+                    )}
+                </div>
+                <Container customClass='start'>
+                    {projects.length > 0 &&
+                        projects.map((project) => (
+                            <ProjectCard
+                                id={project.id}
+                                name={project.name}
+                                budget={project.budget}
+                                category={project.category.name}
+                                key={project.id}
+                            />
+                        ))
+                    }
+
+                </Container>
             </div>
         </Container>
     )

@@ -3,4 +3,5 @@
 .main_container {
     background-color: var(--background-claro);
     color: var(--color-gray);
+    height: 85%;
 }

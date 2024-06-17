@@ -1,3 +1,54 @@
 .container {
-    
+    border: 1px solid #222;
+    border-radius: 3px;
+    padding: 1em;
+    width: 24%;
+    margin: 0.5%;
+}
+
+.container h4 {
+    background-color: var(--background-escuro);
+    color: var(--color-destaque);
+    padding: 0.4em;
+    margin-bottom: 1.3em;
+    font-size: 1.3em;
+}
+
+.container p {
+    color: var(--color-gray);
+    margin-bottom: 1em;
+}
+
+.container p span {
+    font-weight: bold;
+}
+
+.category_text {
+    display: flex;
+    align-items: center;
+}
+
+.category_text span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 5px;
+}
+
+.category_text .infra {
+    background-color: #ffaebc;
+}
+
+.category_text .desenvolvimento {
+    background-color: #a0e7e5;
+}
+
+.category_text .design {
+    background-color: #b4f8c8;   
+}
+
+.category_text .planejamento {
+    background-color: #fbe7c6;
 }
