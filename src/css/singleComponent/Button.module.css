@@ -15,6 +15,12 @@
     height: 40px;
     text-align: center;
     cursor: pointer;
+
+    /* alinhando svg e texto dentro do botão */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .btn:hover {

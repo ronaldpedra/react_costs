@@ -13,23 +13,28 @@ export default function ProjectCard({
   linkText,
   btnText,
 }) {
+
+  function remover(id) {
+    
+  }
+
   return (
     <div className={styles.container}>
-      <h4>{name}</h4>
-      <p>
-        <span>Orçamento:</span> {budget}
-      </p>
-      <p className={styles.category_text}>
-        <span className={`${styles[category.toLowerCase()]}`}></span> {category}
-      </p>
+      <div>
+        <h4>{name}</h4>
+        <p>
+          <span>Orçamento:</span> {budget}
+        </p>
+        <p className={styles.category_text}>
+          <span className={`${styles[category.toLowerCase()]}`}></span> {category}
+        </p>
+      </div>
       <div className={styles.actions}>
         <div className={styles.action}>
-          <BsPencil />
-          <LinkButton to={linkTo} text={linkText} />
+          <LinkButton to={linkTo} text={linkText} icon={<BsPencil />} />
         </div>
         <div className={styles.action}>
-            <BsFillTrashFill />
-          <Button btnText={btnText} />
+          <Button onClick={remover} btnText={btnText} icon={<BsFillTrashFill />} />
         </div>
       </div>
     </div>

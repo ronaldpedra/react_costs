@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Container from "../layout/Container";
+import Loading from "../single/Loading";
 import Message from "../single/Message";
 import styles from "../../css/pages/Projects.module.css"
 import LinkButton from "../single/LinkButton";
@@ -9,20 +10,23 @@ import ProjectCard from "../wraped/ProjectCard";
 export default function Projects() {
 
     const [projects, setProjects] = useState([])
+    const [removeLoading, setRemoveLoading] = useState(false)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/projects`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-            .then((resp) => resp.json())
-            .then((data) => {
-                console.log(data)
-                setProjects(data)
+        setTimeout(() => {
+            fetch(`http://localhost:5000/projects`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
             })
-            .catch((err) => console.log(err))
+                .then((resp) => resp.json())
+                .then((data) => {
+                    setProjects(data)
+                    setRemoveLoading(true)
+                })
+                .catch((err) => console.log(err))
+        }, 1000)
     }, [])
 
     const location = useLocation()
@@ -32,6 +36,17 @@ export default function Projects() {
     }
 
     function removeProject(id) {
+        fetch(`http://localhost:5000/projects/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((resp) => resp.json())
+        .then(() => {
+            setProjects(projects.filter())
+        })
+        .catch((err) => console.log(err))
 
     }
 
@@ -66,6 +81,10 @@ export default function Projects() {
                             />
                         ))
                     }
+                    {!removeLoading && <Loading />}
+                    {removeLoading && projects.length === 0 && (
+                        <p>Não há projetos cadastrados.</p>
+                    )}
                 </Container>
             </div>
         </Container>
