@@ -12,9 +12,10 @@ import ServiceForm from "../wraped/ServiceForm";
 export default function Project() {
   const { id } = useParams();
   const [project, setProject] = useState([]);
+  const [services, setServices] = useState([]);
   const [showProjectForm, setShowProjectForm] = useState(false);
   const [showServiceForm, setShowServiceForm] = useState(false);
-  const [message, setMessage] = useState()
+  const [message, setMessage] = useState();
 
   useEffect(() => {
     setTimeout(() => {
@@ -27,6 +28,7 @@ export default function Project() {
         .then((resp) => resp.json())
         .then((data) => {
           setProject(data);
+          setServices(data.services);
         })
         .catch((err) => console.log(err));
     }, 1000);
@@ -45,10 +47,10 @@ export default function Project() {
     // budget validation
     if (parseFloat(project.budget) < parseFloat(project.cost)) {
       setMessage({
-        type: 'error',
-        text: 'O Orçamento não pode ser menor do que o Custo do Projeto.',
-      })
-      return false
+        type: "error",
+        text: "O Orçamento não pode ser menor do que o Custo do Projeto.",
+      });
+      return false;
     }
     fetch(`http://localhost:5000/projects/${project.id}`, {
       method: "PATCH",
@@ -60,11 +62,12 @@ export default function Project() {
       .then((resp) => resp.json())
       .then((data) => {
         setProject(data);
+        setServices(data.services);
         setShowProjectForm(!showProjectForm);
         setMessage({
-          type: 'success',
-          text: 'Projeto Atualizado com Sucesso!',
-        })
+          type: "success",
+          text: "Projeto Atualizado com Sucesso!",
+        });
       });
   }
 
@@ -76,40 +79,41 @@ export default function Project() {
   }
 
   function createService(project) {
-    const lastService = project.services[project.services.length - 1]
+    const lastService = project.services[project.services.length - 1];
 
-    lastService.id = uuidv4()
+    lastService.id = uuidv4();
 
-    const newCost = parseFloat(project.cost) + parseFloat(lastService.cost)
+    const newCost = parseFloat(project.cost) + parseFloat(lastService.cost);
 
     // Maximum value validation
     if (newCost > parseFloat(project.budget)) {
       setMessage({
-        type: 'error',
-        text: 'Orçamento Ultrapassado. Verifique o valor do Serviço.'
-      })
-      project.services.pop()
-      return false
+        type: "error",
+        text: "Orçamento Ultrapassado. Verifique o valor do Serviço.",
+      });
+      project.services.pop();
+      return false;
     }
 
     // add service cost to project total cost
-    project.cost = newCost
+    project.cost = newCost;
 
     // update project
     fetch(`http://localhost:5000/projects/${project.id}`, {
-      method: 'PATCH',
+      method: "PATCH",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(project)
+      body: JSON.stringify(project),
     })
-    .then((resp) => resp.json())
-    .then((data) => {
-      // exibir os serviços
-      console.log(data)
-      setShowServiceForm(!showServiceForm)
-    })
-    .catch((err) => console.log(err))
+      .then((resp) => resp.json())
+      .then((data) => {
+        setServices(data.services);
+        // exibir os serviços
+        console.log(data);
+        setShowServiceForm(!showServiceForm);
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -164,19 +168,22 @@ export default function Project() {
               <div className={styles.project_info}>
                 {showServiceForm && (
                   <ServiceForm
-                  btnText={'Adicionar Serviço'}
-                  handleSubmit={createService}
-                  projectData={project}/>
+                    btnText={"Adicionar Serviço"}
+                    handleSubmit={createService}
+                    projectData={project}
+                  />
                 )}
               </div>
             </div>
             <h2>Serviços</h2>
-            <Container customClass='start'>
-              {project.services > 0 ? {
-                project.services.map()
-
-              } : (
-                <div><h4>Não há serviços cadastrados</h4></div>
+            <Container customClass="start">
+              {services.length > 0 && services.map((service) => (
+                <p>{service.name}</p>
+              ))}
+              {services.length === 0 && (
+                <div>
+                  <h4>Não há serviços cadastrados</h4>
+                </div>
               )}
             </Container>
           </Container>
