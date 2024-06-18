@@ -4,7 +4,7 @@ import Select from "../single/Select";
 import SubmitButton from "../single/SubmitButton";
 import styles from "../../css/wrapedComponent/Form.module.css"
 
-export default function ProjectForm({ handleSubmit, projectData }) {
+export default function ProjectForm({ handleSubmit, projectData, btnText }) {
 
     const [categories, setCategories] = useState([])
     const [project, setProject] = useState(projectData || {})
@@ -68,7 +68,7 @@ export default function ProjectForm({ handleSubmit, projectData }) {
             />
             <SubmitButton
                 type={'submit'}
-                btnText={'Criar Projeto'}
+                btnText={btnText}
             />
         </form>
     )

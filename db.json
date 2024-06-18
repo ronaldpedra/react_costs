@@ -2,11 +2,11 @@
   "projects": [
     {
       "id": "61ad",
-      "name": "Serviço 2",
-      "budget": "200",
+      "name": "Atualização do Site Clijo!",
+      "budget": "1300",
       "category": {
-        "id": "2",
-        "name": "Desenvolvimento"
+        "id": "3",
+        "name": "Design"
       },
       "cost": 0,
       "services": []
