@@ -3,7 +3,7 @@ import { IoWarning } from "react-icons/io5"
 import styles from "../../css/singleComponent/Message.module.css"
 import { useEffect, useState } from "react"
 
-export default function Message({ type = 'none', text }) {
+export default function Message({ type = 'none', text, handleMessage }) {
 
     const [visible, setVisible] = useState(false)
 
@@ -15,9 +15,12 @@ export default function Message({ type = 'none', text }) {
         setVisible(true)
         const timer = setTimeout(() => {
             setVisible(false)
+            if (handleMessage) {
+                handleMessage({})
+            }
         }, 3000)
         return () => clearTimeout(timer)
-    }, [text])
+    }, [text, handleMessage])
 
     return (
         <>

@@ -6,11 +6,13 @@ import ProjectForm from "../wraped/ProjectForm";
 import Loading from "../single/Loading";
 import Button from "../single/Button";
 import Message from "../single/Message";
+import ServiceForm from "../wraped/ServiceForm";
 
 export default function Project() {
   const { id } = useParams();
   const [project, setProject] = useState([]);
   const [showProjectForm, setShowProjectForm] = useState(false);
+  const [showServiceForm, setShowServiceForm] = useState(false);
   const [message, setMessage] = useState()
 
   useEffect(() => {
@@ -34,19 +36,17 @@ export default function Project() {
     setShowProjectForm(!showProjectForm);
   }
 
+  function toggleServiceForm() {
+    setShowServiceForm(!showServiceForm);
+  }
+
   function editProject(project) {
-    if (message) {
-      setMessage('')
-    }
-    
     // budget validation
-    console.log(parseFloat(project.budget) < parseFloat(project.cost))
     if (parseFloat(project.budget) < parseFloat(project.cost)) {
       setMessage({
         type: 'error',
-        text: 'O Orçamento não pode ser menor do que o Custo do Projeto.'
+        text: 'O Orçamento não pode ser menor do que o Custo do Projeto.',
       })
-      console.log(message)
       return false
     }
     fetch(`http://localhost:5000/projects/${project.id}`, {
@@ -62,7 +62,7 @@ export default function Project() {
         setShowProjectForm(!showProjectForm);
         setMessage({
           type: 'success',
-          text: 'Projeto Atualizado com Sucesso!'
+          text: 'Projeto Atualizado com Sucesso!',
         })
       });
   }
@@ -81,8 +81,9 @@ export default function Project() {
           <Container customClass="column">
             {message && (
               <Message
-              type={message.type}
-              text={message.text}
+                type={message.type}
+                text={message.text}
+                handleMessage={setMessage}
               />
             )}
             <div className={styles.details_container}>
@@ -116,6 +117,22 @@ export default function Project() {
                 </div>
               )}
             </div>
+            <div className={styles.service_form_container}>
+              <h2>Adicione Serviços</h2>
+              <Button
+                handleRemove={toggleServiceForm}
+                btnText={!showServiceForm ? "Adicionar Serviço" : "Fechar"}
+              />
+              <div className={styles.project_info}>
+                {showServiceForm && (
+                  <ServiceForm />
+                )}
+              </div>
+            </div>
+            <h2>Serviços</h2>
+            <Container customClass='start'>
+              <p>Itens de Serviço</p>
+            </Container>
           </Container>
         </div>
       ) : (
