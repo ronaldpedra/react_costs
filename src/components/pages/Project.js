@@ -5,11 +5,13 @@ import Container from "../layout/Container";
 import ProjectForm from "../wraped/ProjectForm";
 import Loading from "../single/Loading";
 import Button from "../single/Button";
+import Message from "../single/Message";
 
 export default function Project() {
   const { id } = useParams();
   const [project, setProject] = useState([]);
   const [showProjectForm, setShowProjectForm] = useState(false);
+  const [message, setMessage] = useState()
 
   useEffect(() => {
     setTimeout(() => {
@@ -33,9 +35,19 @@ export default function Project() {
   }
 
   function editProject(project) {
+    if (message) {
+      setMessage('')
+    }
+    
     // budget validation
+    console.log(parseFloat(project.budget) < parseFloat(project.cost))
     if (parseFloat(project.budget) < parseFloat(project.cost)) {
-      // Message
+      setMessage({
+        type: 'error',
+        text: 'O Orçamento não pode ser menor do que o Custo do Projeto.'
+      })
+      console.log(message)
+      return false
     }
     fetch(`http://localhost:5000/projects/${project.id}`, {
       method: "PATCH",
@@ -48,24 +60,31 @@ export default function Project() {
       .then((data) => {
         setProject(data);
         setShowProjectForm(!showProjectForm);
-        // Message
+        setMessage({
+          type: 'success',
+          text: 'Projeto Atualizado com Sucesso!'
+        })
       });
   }
 
   function moeda(valor) {
-    return (
-        Intl.NumberFormat("pt-br", {
-            style: "currency",
-            currency: "BRL",
-        }).format(valor)
-    )
-}
+    return Intl.NumberFormat("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    }).format(valor);
+  }
 
   return (
     <>
       {project.name ? (
         <div className={styles.project_details}>
           <Container customClass="column">
+            {message && (
+              <Message
+              type={message.type}
+              text={message.text}
+              />
+            )}
             <div className={styles.details_container}>
               <h1>Projeto: {project.name}</h1>
               <Button

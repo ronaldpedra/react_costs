@@ -69,7 +69,7 @@ export default function Projects() {
             />
           )}
         </div>
-        <Container customClass='start'>
+        <Container customClass="start">
           {projects.length > 0 &&
             projects.map((project) => (
               <ProjectCard
@@ -79,8 +79,8 @@ export default function Projects() {
                 category={project.category.name}
                 key={project.id}
                 linkTo={`/project/${project.id}`}
-                linkText={'Editar'}
-                btnText={'Excluir'}
+                linkText={"Editar"}
+                btnText={"Excluir"}
                 handleRemove={removeProject}
               />
             ))}

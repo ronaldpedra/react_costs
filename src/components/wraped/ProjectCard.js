@@ -13,10 +13,16 @@ export default function ProjectCard({
   linkText,
   btnText,
 }) {
-
   const remover = (e) => {
-    e.preventDefault()
-    handleRemove(id)
+    e.preventDefault();
+    handleRemove(id);
+  };
+
+  function moeda(valor) {
+    return Intl.NumberFormat("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    }).format(valor);
   }
 
   return (
@@ -24,10 +30,11 @@ export default function ProjectCard({
       <div>
         <h4>{name}</h4>
         <p>
-          <span>Orçamento:</span> {budget}
+          <span>Orçamento:</span> {moeda(budget)}
         </p>
         <p className={styles.category_text}>
-          <span className={`${styles[category.toLowerCase()]}`}></span> {category}
+          <span className={`${styles[category.toLowerCase()]}`}></span>{" "}
+          {category}
         </p>
       </div>
       <div className={styles.actions}>
@@ -35,7 +42,11 @@ export default function ProjectCard({
           <LinkButton to={linkTo} text={linkText} icon={<BsPencil />} />
         </div>
         <div className={styles.action}>
-          <Button handleRemove={remover} btnText={btnText} icon={<BsFillTrashFill />} />
+          <Button
+            handleRemove={remover}
+            btnText={btnText}
+            icon={<BsFillTrashFill />}
+          />
         </div>
       </div>
     </div>
