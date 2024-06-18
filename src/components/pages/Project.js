@@ -6,6 +6,8 @@ import ProjectForm from "../wraped/ProjectForm";
 import Loading from "../single/Loading";
 import Button from "../single/Button";
 
+import ConversorDeMoeda from "../../js/ConversorDeMoeda"
+
 export default function Project() {
   const { id } = useParams();
   const [project, setProject] = useState([]);
@@ -72,7 +74,7 @@ export default function Project() {
                   </p>
                   <p>
                     <span>Orçamento Total: </span>
-                    {project.budget}
+                    {ConversorDeMoeda(project.budget)}
                   </p>
                   <p>
                     <span>Total Utilizado: </span>
