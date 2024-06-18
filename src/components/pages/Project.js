@@ -6,8 +6,6 @@ import ProjectForm from "../wraped/ProjectForm";
 import Loading from "../single/Loading";
 import Button from "../single/Button";
 
-import ConversorDeMoeda from "../../js/ConversorDeMoeda"
-
 export default function Project() {
   const { id } = useParams();
   const [project, setProject] = useState([]);
@@ -35,25 +33,33 @@ export default function Project() {
   }
 
   function editProject(project) {
-
     // budget validation
     if (parseFloat(project.budget) < parseFloat(project.cost)) {
-        // Message
+      // Message
     }
     fetch(`http://localhost:5000/projects/${project.id}`, {
-        method: 'PATCH',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(project)
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(project),
     })
-    .then((resp) => resp.json())
-    .then((data) => {
-        setProject(data)
-        setShowProjectForm(!showProjectForm)
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProject(data);
+        setShowProjectForm(!showProjectForm);
         // Message
-    })
+      });
   }
+
+  function moeda(valor) {
+    return (
+        Intl.NumberFormat("pt-br", {
+            style: "currency",
+            currency: "BRL",
+        }).format(valor)
+    )
+}
 
   return (
     <>
@@ -74,19 +80,19 @@ export default function Project() {
                   </p>
                   <p>
                     <span>Orçamento Total: </span>
-                    {ConversorDeMoeda(project.budget)}
+                    {moeda(project.budget)}
                   </p>
                   <p>
                     <span>Total Utilizado: </span>
-                    {project.cost}
+                    {moeda(project.cost)}
                   </p>
                 </div>
               ) : (
                 <div className={styles.project_info}>
                   <ProjectForm
-                  projectData={project}
-                  handleSubmit={editProject}
-                  btnText={'Concluir Edição'}
+                    projectData={project}
+                    handleSubmit={editProject}
+                    btnText={"Concluir Edição"}
                   />
                 </div>
               )}
