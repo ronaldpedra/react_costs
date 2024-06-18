@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import styles from "../../css/pages/Project.module.css";
 import Container from "../layout/Container";
 import ProjectForm from "../wraped/ProjectForm";
@@ -74,6 +75,43 @@ export default function Project() {
     }).format(valor);
   }
 
+  function createService(project) {
+    const lastService = project.services[project.services.length - 1]
+
+    lastService.id = uuidv4()
+
+    const newCost = parseFloat(project.cost) + parseFloat(lastService.cost)
+
+    // Maximum value validation
+    if (newCost > parseFloat(project.budget)) {
+      setMessage({
+        type: 'error',
+        text: 'Orçamento Ultrapassado. Verifique o valor do Serviço.'
+      })
+      project.services.pop()
+      return false
+    }
+
+    // add service cost to project total cost
+    project.cost = newCost
+
+    // update project
+    fetch(`http://localhost:5000/projects/${project.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(project)
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+      // exibir os serviços
+      console.log(data)
+      setShowServiceForm(!showServiceForm)
+    })
+    .catch((err) => console.log(err))
+  }
+
   return (
     <>
       {project.name ? (
@@ -125,13 +163,21 @@ export default function Project() {
               />
               <div className={styles.project_info}>
                 {showServiceForm && (
-                  <ServiceForm />
+                  <ServiceForm
+                  btnText={'Adicionar Serviço'}
+                  handleSubmit={createService}
+                  projectData={project}/>
                 )}
               </div>
             </div>
             <h2>Serviços</h2>
             <Container customClass='start'>
-              <p>Itens de Serviço</p>
+              {project.services > 0 ? {
+                project.services.map()
+
+              } : (
+                <div><h4>Não há serviços cadastrados</h4></div>
+              )}
             </Container>
           </Container>
         </div>

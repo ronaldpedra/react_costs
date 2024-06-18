@@ -3,13 +3,26 @@
     {
       "id": "61ad",
       "name": "Atualização do Site Clijo!",
-      "budget": "0",
+      "budget": "10",
       "category": {
         "id": "3",
         "name": "Design"
       },
-      "cost": 0,
-      "services": []
+      "cost": 3,
+      "services": [
+        {
+          "name": "Meu novo serviço",
+          "cost": "1",
+          "description": "serviço novo",
+          "id": "954fce2f-fdb3-4164-839d-b0e2806acfba"
+        },
+        {
+          "name": "Meu novo serviço 2",
+          "cost": "2",
+          "description": "serviço novo 2",
+          "id": "af015606-5e07-49f5-a153-8b8430dc75f5"
+        }
+      ]
     },
     {
       "id": "4cae",
