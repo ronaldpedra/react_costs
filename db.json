@@ -32,8 +32,15 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 0,
-      "services": []
+      "cost": 500,
+      "services": [
+        {
+          "name": "Contratar Dev PHP",
+          "cost": "500",
+          "description": "Contratação de dev php para desenvolvimento do backend da aplicação.",
+          "id": "17ecc90a-fb37-4e3f-aec1-99f0f20dcb00"
+        }
+      ]
     },
     {
       "id": "b5bd",

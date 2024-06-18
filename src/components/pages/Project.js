@@ -8,6 +8,7 @@ import Loading from "../single/Loading";
 import Button from "../single/Button";
 import Message from "../single/Message";
 import ServiceForm from "../wraped/ServiceForm";
+import ServiceCard from "../wraped/ServiceCard";
 
 export default function Project() {
   const { id } = useParams();
@@ -108,12 +109,18 @@ export default function Project() {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        setServices(data.services);
-        // exibir os serviços
-        console.log(data);
         setShowServiceForm(!showServiceForm);
+        // exibir os serviços
+        setServices(data.services);
       })
       .catch((err) => console.log(err));
+  }
+
+  function removeService(service_id) {
+
+    setServices(services.filter((service) => service !== service_id))
+    project.services = services
+
   }
 
   return (
@@ -178,7 +185,14 @@ export default function Project() {
             <h2>Serviços</h2>
             <Container customClass="start">
               {services.length > 0 && services.map((service) => (
-                <p>{service.name}</p>
+                <ServiceCard
+                id={service.id}
+                name={service.name}
+                cost={service.cost}
+                description={service.description}
+                key={service.id}
+                handleRemove={removeService}
+                />
               ))}
               {services.length === 0 && (
                 <div>
