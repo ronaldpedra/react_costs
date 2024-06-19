@@ -9,19 +9,25 @@ import Home from "./components/pages/Home";
 export default function App() {
   return (
     <>
-      <Header>
-        <Container><Navbar /></Container>
-      </Header>
-      <Main>
-        <Router>
-          <Routes>
-              <Route path='/' element={<Home />} />
-          </Routes>
-        </Router>
-      </Main>
-      <Footer>
-        <p>Footer content</p>
-      </Footer>
+      <Router>
+        <Header>
+          <Container>
+            <Navbar />
+          </Container>
+        </Header>
+        <Main>
+          <Container>
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </Container>
+        </Main>
+        <Footer>
+          <Container>
+            <p>Footer content</p>
+          </Container>
+        </Footer>
+      </Router>
     </>
   );
 }
