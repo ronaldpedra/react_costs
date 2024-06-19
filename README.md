@@ -1,4 +1,10 @@
-# Iniciando com Create React App
+# Iniciando com Create React App - Versão na_mano2
+
+O que evoluiu na versão na_mao2:
+
+- a arquitetura do projeto ficou melhor separando os componentes por tipos: layout, pages, single, wraped.
+- a separação dos arquivos css em uma pasta separada semelhante à pasta components melhorou a visualização do código para o trabalho do programador.
+- o uso de varáveis css foi testado com sucesso
 
 Este projeto foi inicializado com [Create React App](https://github.com/facebook/create-react-app).
 
@@ -9,13 +15,17 @@ No caso de puxar do GitHub, na pasta do projeto, só digite (todas as dependênc
 Caso esteja criando do zero, na pasta pai:
 
 ### `npx create-react-app react_costs`
+
 ### `npm update`
 
 ## Dependências
 
 ### `npm install json-server --save`
+
 ### `npm install react-icons --save`
+
 ### `npm install react-router-dom --save`
+
 ### `npm install uuid --save`
 
 ## Scripts Disoníveis
@@ -25,9 +35,10 @@ Neste projeto, você poderá carregar:
 Na pasta do projeto
 
 ### `npm start`
+
 ### `npm run backend`
 
-Carregue o app no modo de desenvolvimento.\
+Carregue o app no modo de desenvolvimento.
 Abra [http://localhost:3000](http://localhost:3000) para vê-la em seu navegarod.
 
 A página atualizará quando você fizer modificações.\
