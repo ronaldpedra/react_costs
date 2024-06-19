@@ -11,7 +11,7 @@ export default function ServiceCard({
 }) {
   function excluirServico(e) {
     e.preventDefault()
-    handleRemove(id);
+    handleRemove(id, cost);
   }
 
   function moeda(valor) {

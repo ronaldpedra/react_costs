@@ -116,11 +116,31 @@ export default function Project() {
       .catch((err) => console.log(err));
   }
 
-  function removeService(service_id) {
+  function removeService(id, cost) {
+    const servicesUpdated = project.services.filter(
+      (service) => service.id !== id
+    );
+    const projectUpdated = project;
+    projectUpdated.services = servicesUpdated;
+    projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost);
 
-    setServices(services.filter((service) => service !== service_id))
-    project.services = services
-
+    fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(projectUpdated),
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProject(data);
+        setServices(data.services);
+        setMessage({
+          type: "success",
+          text: "Serviço removido com sucesso!",
+        });
+      })
+      .catch((err) => console.log(err));
   }
 
   return (
@@ -184,16 +204,17 @@ export default function Project() {
             </div>
             <h2>Serviços</h2>
             <Container customClass="start">
-              {services.length > 0 && services.map((service) => (
-                <ServiceCard
-                id={service.id}
-                name={service.name}
-                cost={service.cost}
-                description={service.description}
-                key={service.id}
-                handleRemove={removeService}
-                />
-              ))}
+              {services.length > 0 &&
+                services.map((service) => (
+                  <ServiceCard
+                    id={service.id}
+                    name={service.name}
+                    cost={service.cost}
+                    description={service.description}
+                    key={service.id}
+                    handleRemove={removeService}
+                  />
+                ))}
               {services.length === 0 && (
                 <div>
                   <h4>Não há serviços cadastrados</h4>

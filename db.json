@@ -8,19 +8,25 @@
         "id": "3",
         "name": "Design"
       },
-      "cost": 3,
+      "cost": 10,
       "services": [
         {
           "name": "Meu novo serviço",
-          "cost": "1",
+          "cost": "5",
           "description": "serviço novo",
-          "id": "954fce2f-fdb3-4164-839d-b0e2806acfba"
+          "id": "659cc715-f682-42ed-b31b-406666964939"
         },
         {
-          "name": "Meu novo serviço 2",
+          "name": "Serviço 2",
+          "cost": "3",
+          "description": "Contratar novo funcionário da área de desenvolvimento",
+          "id": "c6c92a6e-fe3e-4eff-b0c6-d5b14cfe8758"
+        },
+        {
+          "name": "Serviço 1",
           "cost": "2",
-          "description": "serviço novo 2",
-          "id": "af015606-5e07-49f5-a153-8b8430dc75f5"
+          "description": "teste",
+          "id": "5192c07a-90df-4ec4-a73f-7f46353660cd"
         }
       ]
     },
