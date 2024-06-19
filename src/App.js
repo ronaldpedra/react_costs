@@ -5,6 +5,7 @@ import Footer from "./components/layout/Footer";
 import Navbar from "./components/wraped/Navbar";
 import Home from "./components/pages/Home";
 import Projects from "./components/pages/Projects"
+import FooterItems from "./components/wraped/FooterItems";
 
 export default function App() {
   return (
@@ -20,7 +21,7 @@ export default function App() {
           </Routes>
         </Main>
         <Footer>
-          <p>Footer content</p>
+          <FooterItems />
         </Footer>
       </Router>
     </>

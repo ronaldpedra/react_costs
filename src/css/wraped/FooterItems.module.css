@@ -1,0 +1,29 @@
+.footer_container {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: var(--gold-vivid-5);
+}
+
+.footer_container ul {
+    display: flex;
+    gap: var(--spacing-scale-2x);
+    color: var(--gold-vivid-5);
+}
+
+.footer_container li {
+    list-style: none;
+}
+
+.footer_container p {
+    color: var(--gold-vivid-5);
+}
+
+.footer_container span {
+    font-weight: var(--font-weight-bold);
+    color: var(--gold-vivid-20);
+}
