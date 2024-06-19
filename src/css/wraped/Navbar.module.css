@@ -1,0 +1,12 @@
+@import "../core/Variaveis.css";
+
+.navbar_container {
+    width: 100%;
+    padding: 1em;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: white;
+}

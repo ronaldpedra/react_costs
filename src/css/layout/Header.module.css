@@ -1,0 +1,10 @@
+@import "../core/Variaveis.css";
+
+.header_container {
+    width: 100%;
+    background-color: var(--background-color-header);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
