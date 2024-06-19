@@ -10,3 +10,23 @@
 
     color: white;
 }
+
+.navbar_container a {
+    transition: 0.2s;
+}
+
+.navbar_container a:hover {
+    font-size: var(--font-size-scale-up-02);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--font-lineheight-medium);
+    color: var(--font-color-destaque);
+}
+
+.navbar_container ul {
+    display: flex;
+    align-items: center;
+}
+.navbar_container li {
+    margin-left: var(--spacing-scale-2x);
+    list-style: none;
+}

@@ -5,6 +5,7 @@ import Footer from "./components/layout/Footer";
 import Container from "./components/layout/Container";
 import Navbar from "./components/wraped/Navbar";
 import Home from "./components/pages/Home";
+import Projects from "./components/pages/Projects"
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
           <Container>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/projects" element={<Projects /> } />
             </Routes>
           </Container>
         </Main>
