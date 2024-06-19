@@ -13,7 +13,6 @@ export default function App() {
         <Container><Navbar /></Container>
       </Header>
       <Main>
-
         <Router>
           <Routes>
               <Route path='/' element={<Home />} />
