@@ -1,10 +1,4 @@
 :root {
-    --background-color-padrao: #e7e7e7;
-    --background-color-header: #222222;
-    
-    /* Font Color */
-    --font-color-destaque: #ffbb22;
-
     /* Font Weight */
     --font-weight-thin: 100;
 	--font-weight-extra-light: 200;
@@ -55,17 +49,22 @@
     --spacing-scale-5xh: 44px;
 
     /* Paleta de Cores */
-    --gray-80: #333333;
+    --gold-vivid-80: #3B2B15;
+    --gold-vivid-70: #5C410A;
+    --gold-vivid-60: #7A591A;
+    --gold-vivid-50: #936F38;
+    --gold-vivid-40: #C2850C;
+    --gold-vivid-30: #E5A000;
+    --gold-vivid-20: #FFBE2E;
+    --gold-vivid-10: #FFE396;
+    --gold-vivid-5: #FEF0C8;
 }
 
-h1 {.navbar_container a {
-    text-decoration: none;
-    color: white;
-}
+h1 {
     font-size: var(--font-size-scale-up-06);
     font-weight: var(--font-weight-light);
     line-height: var(--font-lineheight-low);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-4x);
 }
 
@@ -73,7 +72,7 @@ h2 {
     font-size: var(--font-size-scale-up-05);
     font-weight: var(--font-weight-regular);
     line-height: var(--font-lineheight-low);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-2xh);
     margin-top: var(--spacing-scale-3xh);
 }
@@ -82,7 +81,7 @@ h3 {
     font-size: var(--font-size-scale-up-04);
     font-weight: var(--font-weight-medium);
     line-height: var(--font-lineheight-low);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-2xh);
     margin-top: var(--spacing-scale-3xh);
 }
@@ -91,7 +90,7 @@ h4 {
     font-size: var(--font-size-scale-up-03);
     font-weight: var(--font-weight-semi-bold);
     line-height: var(--font-lineheight-low);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-2xh);
     margin-top: var(--spacing-scale-3xh);
 }
@@ -100,7 +99,7 @@ h5 {
     font-size: var(--font-size-scale-up-02);
     font-weight: var(--font-weight-bold);
     line-height: var(--font-lineheight-low);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-2x);
     margin-top: var(--spacing-scale-3xh);
     text-transform: uppercase;
@@ -110,7 +109,7 @@ h6 {
     font-size: var(--font-size-scale-up-01);
     font-weight: var(--font-weight-bold);
     line-height: var(--font-lineheight-low);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-2x);
     margin-top: var(--spacing-scale-3xh);
     text-transform: uppercase;
@@ -120,7 +119,7 @@ p {
     font-size: var(--font-size-scale-up-01);
     font-weight: var(--font-weight-regular);
     line-height: var(--font-lineheight-medium);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-2x);
 }
 
@@ -128,7 +127,7 @@ label {
     font-size: var(--font-size-scale-base);
     font-weight: var(--font-weight-bold);
     line-height: var(--font-lineheight-medium);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-half);
 }
 
@@ -136,7 +135,7 @@ input {
     font-size: var(--font-size-scale-up-01);
     font-weight: var(--font-weight-medium);
     line-height: var(--font-lineheight-low);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-half);
 }
 
@@ -144,7 +143,7 @@ input {
     font-size: var(--font-size-scale-base);
     font-weight: var(--font-weight-regular);
     line-height: var(--font-lineheight-medium);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-half);
     margin-top: var(--spacing-scale-half)
 }
@@ -153,7 +152,7 @@ legend {
     font-size: var(--font-size-scale-up-01);
     font-weight: var(--font-weight-bold);
     line-height: var(--font-lineheight-low);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-2x);
     margin-top: var(--spacing-scale-2x)
 }
@@ -162,7 +161,7 @@ ul {
     font-size: var(--font-size-scale-up-01);
     font-weight: var(--font-weight-regular);
     line-height: var(--font-lineheight-medium);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     margin-bottom: var(--spacing-scale-base);
     margin-top: var(--spacing-scale-2x)
 }
@@ -171,6 +170,6 @@ a {
     font-size: var(--font-size-scale-up-01);
     font-weight: var(--font-weight-regular);
     line-height: var(--font-lineheight-medium);
-    color: var(--gray-80);
+    color: var(--gold-vivid-80);
     text-decoration: none;
 }

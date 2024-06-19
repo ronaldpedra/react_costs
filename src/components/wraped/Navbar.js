@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import styles from "../../css/wraped/Navbar.module.css";
 import logo from "../../img/costs_logo.png";
+import Container from "../layout/Container";
 
 export default function Navbar() {
   return (
+    
     <nav className={styles.navbar_container}>
       <img src={logo} alt="Costs" />
       <ul>
@@ -15,5 +17,6 @@ export default function Navbar() {
         </li>
       </ul>
     </nav>
+    
   );
 }

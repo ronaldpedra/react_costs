@@ -2,13 +2,18 @@
 
 .navbar_container {
     width: 100%;
-    padding: 1em;
+    /* padding: 1em; */
     
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    color: white;
+    color: var(--gold-vivid-5);
+}
+
+.navbar_container a {
+    text-decoration: none;
+    color: var(--gold-vivid-5);
 }
 
 .navbar_container a {
@@ -19,7 +24,7 @@
     font-size: var(--font-size-scale-up-02);
     font-weight: var(--font-weight-medium);
     line-height: var(--font-lineheight-medium);
-    color: var(--font-color-destaque);
+    color: var(--gold-vivid-20);
 }
 
 .navbar_container ul {

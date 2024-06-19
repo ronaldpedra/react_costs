@@ -2,7 +2,7 @@
 
 .main_container {
     width: 100%;
-    background-color: var(--background-color-padrao);
+    background-color: var(--gold-vivid-5);
 
     display: flex;
     justify-content: center;

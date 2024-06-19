@@ -12,22 +12,16 @@ export default function App() {
     <>
       <Router>
         <Header>
-          <Container>
             <Navbar />
-          </Container>
         </Header>
         <Main>
-          <Container>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/projects" element={<Projects /> } />
             </Routes>
-          </Container>
         </Main>
         <Footer>
-          <Container>
             <p>Footer content</p>
-          </Container>
         </Footer>
       </Router>
     </>

@@ -1,4 +1,7 @@
+@import "../core/Variaveis.css";
+
 .container {
     width: 1200px;
+    padding: var(--spacing-scale-2x);
 }
 

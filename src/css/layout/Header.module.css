@@ -2,7 +2,7 @@
 
 .header_container {
     width: 100%;
-    background-color: var(--background-color-header);
+    background-color: var(--gold-vivid-80);
 
     display: flex;
     justify-content: center;
