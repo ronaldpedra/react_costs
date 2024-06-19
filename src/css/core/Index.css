@@ -1,8 +1,10 @@
+@import "./Variaveis.css";
+
 * {
     margin: 0;
     padding: 0;
 }
 
 html, body, #root {
-    background-color: #d3d2d2;
+    background-color: var(--background-color-padrao);
 }
