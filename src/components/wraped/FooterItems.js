@@ -7,6 +7,7 @@ export default function FooterItems() {
                 <li>face</li>
                 <li>insta</li>
                 <li>Linkedin</li>
+                <li>XTwitter</li>
                 <li>github</li>
             </ul>
             <p><span>Costs</span> &copy; June 2024</p>
