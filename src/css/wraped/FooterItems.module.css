@@ -13,11 +13,18 @@
     display: flex;
     gap: var(--spacing-scale-2x);
     color: var(--gold-vivid-5);
+    line-height: var(--font-lineheight-high);
 }
 
 .footer_container li {
     list-style: none;
     font-size: var(--font-size-scale-up-01);
+    color: var(--gold-vivid-5);
+    transition: 0.5s;
+}
+
+.footer_container li:hover {
+    color: var(--gold-vivid-20);
 }
 
 .footer_container p {

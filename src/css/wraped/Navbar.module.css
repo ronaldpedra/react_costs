@@ -14,15 +14,10 @@
 .navbar_container a {
     text-decoration: none;
     color: var(--gold-vivid-5);
-}
-
-.navbar_container a {
     transition: 0.2s;
 }
 
 .navbar_container a:hover {
-    font-size: var(--font-size-scale-up-02);
-    font-weight: var(--font-weight-medium);
     line-height: var(--font-lineheight-medium);
     color: var(--gold-vivid-20);
 }

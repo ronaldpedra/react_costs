@@ -5,7 +5,7 @@ import logo from "../../img/costs_logo.png";
 export default function Navbar() {
   return (
     <nav className={styles.navbar_container}>
-      <img src={logo} alt="Costs" />
+      <Link to='/'><img src={logo} alt="Costs" /></Link>
       <ul>
         <li>
           <Link to={"/"}>Home</Link>
