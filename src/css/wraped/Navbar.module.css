@@ -20,6 +20,8 @@
 .navbar_container a:hover {
     line-height: var(--font-lineheight-medium);
     color: var(--gold-vivid-20);
+    /* text-shadow: 0px 1px 3px var(--gold-vivid-5); */
+    
 }
 
 .navbar_container ul {

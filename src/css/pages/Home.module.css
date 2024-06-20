@@ -1,0 +1,20 @@
+.btn {
+    background-color: var(--gold-vivid-70);
+    color: var(--gold-vivid-5);
+    
+    border-radius: 100em;
+    height: 40px;
+    align-items: center;
+    border: 0;
+    cursor: pointer;
+    font-size: var(--font-size-scale-up-01);
+    font-weight: var(--font-weight-semi-bold);
+    padding: 0 var(--spacing-scale-3x);
+
+    line-height: var(--font-lineheight-medium);
+    transition: 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--gold-vivid-50);
+}

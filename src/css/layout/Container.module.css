@@ -5,3 +5,11 @@
     padding: var(--spacing-scale-2x);
 }
 
+.center_column {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
