@@ -1,0 +1,54 @@
+.input_col {
+    display: block;
+
+    margin-bottom: var(--spacing-scale-2x);
+    padding: 0 12px;
+    width: 100%;
+}
+
+.input_col label {
+    color: var(--gold-vivid-80);
+    font-size: var(--font-size-scale-base);
+    font-weight: var(--font-weight-semi-bold);
+    line-height: var(--font-lineheight-medium);
+    margin-bottom: var(--spacing-scale-half);
+
+    cursor: default;
+}
+
+.input_col input {
+    --background-light: #fff;
+    --border-color-alternative: #888;
+    --surface-rounder-sm: 4px;
+    --border-style: solid;
+    --border-width: 1px;
+    --color-light: #333;
+    --input-size: 40px;
+
+    background-color: var(--background-light);
+    border-color: var(--border-color-alternative);
+    border-radius: var(--surface-rounder-sm);
+    border-style: var(--border-style);
+    border-width: var(--border-width);
+    color: var(--color-light);
+    display: block;
+    font-size: var(--font-size-scale-up-01);
+    font-weight: var(--font-weight-medium);
+    height: var(--input-size);
+    margin-top: var(--spacing-scale-half);
+    padding-bottom: 0;
+    padding-left: var(--spacing-scale-2x);
+    padding-right: var(--spacing-scale-2x);
+    padding-top: 0;
+    width: 100%;
+}
+
+.input_col input:hover {
+    background-color: #e0e0e0;
+}
+
+.input_col input:focus {
+    --focus: #c2850c;
+    border-color: var(--focus) !important;
+    
+}

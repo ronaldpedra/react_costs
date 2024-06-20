@@ -1,0 +1,30 @@
+.form fieldset {
+  border: 0;
+  margin: 0 2px var(--spacing-scale-5x) 2px;
+  padding: 0;
+}
+
+.form legend {
+    color: var(--gold-vivid-80);
+    font-size: var(--font-size-scale-up-01);
+    font-weight: var(--font-weight-semi-bold);
+    line-height: var(--font-lineheight-low);
+    margin-bottom: var(--spacing-scale-2x);
+    margin-top: var(--spacing-scale-2x);
+
+    box-sizing: border-box;
+    display: table;
+    max-width: 100%;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
