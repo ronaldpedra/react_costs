@@ -5,7 +5,7 @@ import LinkButton from "../Single/LinkButton";
 
 export default function Home() {
   return (
-    <Container>
+    <Container customClass='center'>
       <div className={styles.home_items}>
         <h1>
           Bem-Vindo ao <span>Costs</span>
