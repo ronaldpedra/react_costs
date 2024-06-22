@@ -1,0 +1,111 @@
+@import "../core/Variaveis.css";
+
+.message_container {
+    display: flex;
+    margin-bottom: var(--spacing-scale-2x);
+    color: #333;
+    font-size: var(--font-size-scale-base);
+}
+
+.icon {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding-left: var(--spacing-scale-2x);
+    padding-right: var(--spacing-scale-2x);
+}
+
+.content {
+    display: block;
+    padding: var(--spacing-scale-3x) var(--spacing-scale-base) var(--spacing-scale-3x) 0;
+    color: #333;
+    flex: 1;
+}
+
+.message_title {
+    font-weight: var(--font-weight-semi-bold);
+}
+
+.message_body {
+    font-weight: var(--font-weight-regular);
+}
+
+.close {
+    margin-right: var(--spacing-scale-base);
+    margin-top: var(--spacing-scale-base);
+}
+
+.circle_small {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: inline-flex;
+    font-weight: var(--font-weight-semi-bold);
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    appearance: button;
+}
+
+.danger {
+    background-color: #fde0db;
+    .icon {
+        color: #e52207;
+    }
+    .circle_small {
+        color: #e52207;
+    }
+    .circle_small:hover {
+        background-color: rgb(240, 182, 180);
+    }
+}
+
+
+
+.success {
+    background-color: #e3f5e1;
+    .icon {
+        color: #168821;
+    }
+    .circle_small {
+        color: #168821;
+    }
+    .circle_small:hover {
+        background-color: rgb(200, 230, 200);
+    }
+}
+
+.info {
+    background-color: #d4e5ff;
+    .icon {
+        color: #155bcb;
+    }
+    .circle_small {
+        color: #155bcb;
+    }
+    .circle_small:hover {
+        background-color: rgb(170, 200, 255);
+    }
+}
+
+.warning {
+    background-color: #fff5c2;
+    .icon {
+        color: #ffcd07;
+    }
+    .circle_small {
+        color: #ffcd07;
+    }
+    .circle_small:hover {
+        background-color: rgb(255, 229, 135);
+    }
+}

@@ -56,14 +56,23 @@ export default function HandleCategories() {
         })
             .then((resp) => resp.json())
             .then((data) => {
-                console.log(data)
                 getCategories()
                 // message
             })
     }
 
     function deleteCategory(id) {
-        console.log(id)
+        fetch(`http://localhost:5000/categories/${id}`, {
+            method: "DELETE",
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then((resp) => resp.json())
+        .then(() => {
+            getCategories()
+        })
+        .catch((err) => console.log(err))
 
     }
 
@@ -78,6 +87,7 @@ export default function HandleCategories() {
                             name={category.name}
                             show={true}
                             key={category.id}
+                            handleRemove={deleteCategory}
                         />
                     ))
                 }
@@ -85,7 +95,6 @@ export default function HandleCategories() {
                 {removeLoading && categories.length === 0 && (
                     <CategoryItem
                         show={false}
-                        handleRemove={deleteCategory}
                     />
                 )}
             </div>
