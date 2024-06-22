@@ -26,7 +26,7 @@ export default function HandleCategories() {
                     console.log(categories.length)
                 })
                 .catch((err) => console.log(err))
-            }, 3000)
+            }, 10000)
         })        
     }, [])
 
