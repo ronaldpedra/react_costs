@@ -17,11 +17,10 @@ export default function CreateCategoryForm({ handleSubmit, categoryData }) {
         if (!category.name) {
             // message
             setMessage({
-                type: 'warning',
+                type: 'danger',
                 title: 'Erro de Nome.',
                 body: 'Você deve preencher o nome da categoria.'
             })
-            console.log('Preecha o nome da Categoria.')
             return false
         }
         document.getElementById('name').value = ''
@@ -59,7 +58,7 @@ export default function CreateCategoryForm({ handleSubmit, categoryData }) {
                     type={message.type}
                     title={message.title}
                     body={message.body}                    
-                    setMessage={setMessage} />
+                    handleMessage={setMessage} />
                 )}
             </fieldset>
         </form>
