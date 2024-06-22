@@ -1,7 +1,7 @@
-import Input from "../Single/Input";
-import LinkButton from "../Single/LinkButton";
-import Select from "../Single/Select";
-import SubmitButton from "../Single/SubmitButton";
+import Input from "../single/Input";
+import LinkButton from "../single/LinkButton";
+import Select from "../single/Select";
+import SubmitButton from "../single/SubmitButton";
 import styles from "../../css/wraped/CreateProjectForm.module.css";
 
 export default function CreateProjectForm() {
@@ -14,8 +14,8 @@ export default function CreateProjectForm() {
             <Input label={'Nome:'} type={'text'} name={'name'} placeholder={'Nome do Projeto'} />
             <Input label={'Orçamento:'} type={'number'} name={'budget'} placeholder={'Orçamento do Projeto'} />
             <Select
-            label={'Categoria:'}
-            name={'category'} />
+              label={'Categoria:'}
+              name={'category'} />
             <div className={styles.actions}>
               <LinkButton to="/" btntext={"Cancelar"} />
               <SubmitButton btnText={'Criar Projeto'} />

@@ -1,7 +1,7 @@
 import Container from "../layout/Container";
 import Savings from "../../img/savings.svg";
 import styles from "../../css/pages/Home.module.css";
-import LinkButton from "../Single/LinkButton";
+import LinkButton from "../single/LinkButton";
 
 export default function Home() {
   return (

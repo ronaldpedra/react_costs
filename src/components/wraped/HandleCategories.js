@@ -1,13 +1,14 @@
-import Input from "../Single/Input";
-import LinkButton from "../Single/LinkButton";
-import SubmitButton from "../Single/SubmitButton";
+import Input from "../single/Input";
+import LinkButton from "../single/LinkButton";
+import SubmitButton from "../single/SubmitButton";
 import styles from "../../css/wraped/CreateProjectForm.module.css";
 import { MdOutlineEditNote, MdDeleteForever } from "react-icons/md";
 import { useEffect, useState, useTransition } from "react";
+import Loading from "../single/Loading";
 
 export default function HandleCategories() {
 
-    const [categories, setCategories ] = useState([])
+    const [categories, setCategories] = useState([])
     const [isPending, startTransition] = useTransition()
 
     useEffect(() => {
@@ -19,15 +20,15 @@ export default function HandleCategories() {
                         'Content-Type': 'application/json'
                     }
                 })
-                .then((resp) => resp.json())
-                .then((data) => {
-                    setCategories(data)
-                    console.log(data)
-                    console.log(categories.length)
-                })
-                .catch((err) => console.log(err))
+                    .then((resp) => resp.json())
+                    .then((data) => {
+                        setCategories(data)
+                        console.log(data)
+                        console.log(categories.length)
+                    })
+                    .catch((err) => console.log(err))
             }, 10000)
-        })        
+        })
     }, [])
 
     return (
@@ -63,18 +64,15 @@ export default function HandleCategories() {
                     </div>
                 </div>
                 {categories.length === 0 && (
-                    <div className={`${styles.category_info} ${styles.none}`}>
-                    <div>Não há categorias registradas.</div>
-                    
-                </div>
+                    <>
+                        <div className={`${styles.category_info} ${styles.none}`}>
+                            <div>Não há categorias registradas.</div>
+                        </div>
+                        <Loading />
+                    </>
                 )}
-                {isPending && (
-                    <div className={`${styles.category_info} ${styles.none}`}>
-                    <div>Não há categorias registradas.</div>
-                    
-                </div>
-                )}
-                
+                {isPending && <Loading />}
+
             </div>
 
             <div className={styles.col}>
