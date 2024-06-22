@@ -13,7 +13,8 @@ export default function HandleCategories() {
 
     useEffect(() => {
         startTransition(async () => {
-            setTimeout(() => {
+
+            const timer = await setTimeout(() => {
                 fetch(`http://localhost:5000/categories`, {
                     method: 'GET',
                     headers: {
@@ -28,7 +29,10 @@ export default function HandleCategories() {
                     })
                     .catch((err) => console.log(err))
             }, 10000)
+            return () => clearTimeout(timer)
         })
+
+
     }, [])
 
     return (
