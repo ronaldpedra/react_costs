@@ -19,7 +19,7 @@
 
 .category_info svg {
     font-size: var(--font-size-scale-up-02);
-    
+    cursor: pointer;
 }
 
 .category_actions {

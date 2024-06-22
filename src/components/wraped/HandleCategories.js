@@ -62,6 +62,11 @@ export default function HandleCategories() {
             })
     }
 
+    function deleteCategory(id) {
+        console.log(id)
+
+    }
+
     return (
         <div className={styles.row}>
             <div className={styles.col}>
@@ -72,6 +77,7 @@ export default function HandleCategories() {
                             id={category.id}
                             name={category.name}
                             show={true}
+                            key={category.id}
                         />
                     ))
                 }
@@ -79,6 +85,7 @@ export default function HandleCategories() {
                 {removeLoading && categories.length === 0 && (
                     <CategoryItem
                         show={false}
+                        handleOnClick={deleteCategory}
                     />
                 )}
             </div>

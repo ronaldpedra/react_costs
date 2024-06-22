@@ -1,4 +1,13 @@
 {
-    "projects": [],
-    "categories": []
-} 
+  "projects": [],
+  "categories": [
+    {
+      "id": "637f",
+      "name": "Infra"
+    },
+    {
+      "id": "5543",
+      "name": "teste"
+    }
+  ]
+}
