@@ -1,10 +1,11 @@
 import styles from "../../css/single/CategoryItem.module.css"
 import { MdOutlineEditNote, MdDeleteForever } from "react-icons/md";
 
-export default function CategoryItem({ id, name, show, handleOnClick }) {
+export default function CategoryItem({ id, name, show, handleRemove }) {
 
-    function excluir() {
-        handleOnClick(id)
+    function excluir(e) {
+        e.preventDefault()
+        handleRemove(id)
     }
 
     if (show) {
@@ -14,9 +15,10 @@ export default function CategoryItem({ id, name, show, handleOnClick }) {
                 <div className={styles.category_actions}>
                     {/* <div><MdOutlineEditNote /></div> */}
                     {/* <div> */}
-                        <MdDeleteForever 
-                        onClick={excluir}
-                        />
+                    <button onClick={excluir}><MdDeleteForever 
+                        
+                        /></button>
+                        
                         {/* </div> */}
                 </div>
             </div>

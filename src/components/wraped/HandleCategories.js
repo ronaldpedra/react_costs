@@ -85,7 +85,7 @@ export default function HandleCategories() {
                 {removeLoading && categories.length === 0 && (
                     <CategoryItem
                         show={false}
-                        handleOnClick={deleteCategory}
+                        handleRemove={deleteCategory}
                     />
                 )}
             </div>
