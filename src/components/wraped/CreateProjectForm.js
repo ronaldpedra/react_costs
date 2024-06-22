@@ -2,7 +2,7 @@ import Input from "../single/Input";
 import LinkButton from "../single/LinkButton";
 import Select from "../single/Select";
 import SubmitButton from "../single/SubmitButton";
-import styles from "../../css/wraped/CreateProjectForm.module.css";
+import styles from "../../css/wraped/Form.module.css";
 
 export default function CreateProjectForm() {
   return (

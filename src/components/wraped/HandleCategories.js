@@ -1,96 +1,93 @@
-import Input from "../single/Input";
-import LinkButton from "../single/LinkButton";
-import SubmitButton from "../single/SubmitButton";
-import styles from "../../css/wraped/CreateProjectForm.module.css";
-import { MdOutlineEditNote, MdDeleteForever } from "react-icons/md";
-import { useEffect, useState, useTransition } from "react";
+import styles from "../../css/wraped/Form.module.css";
+import { useEffect, useState } from "react";
 import Loading from "../single/Loading";
+import CategoryItem from "../single/CategoryItem";
+import CreateCategoryForm from "./CreateCategoryForm";
 
 export default function HandleCategories() {
 
     const [categories, setCategories] = useState([])
-    const [isPending, startTransition] = useTransition()
+    const [removeLoading, setRemoveLoading] = useState(false)
 
-    useEffect(() => {
-        startTransition(async () => {
-
-            const timer = await setTimeout(() => {
-                fetch(`http://localhost:5000/categories`, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
+    function getCategories() {
+        setRemoveLoading(!removeLoading)
+        setTimeout(() => {
+            fetch(`http://localhost:5000/categories`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then((resp) => resp.json())
+                .then((data) => {
+                    setCategories(data)
+                    setRemoveLoading(true)
                 })
-                    .then((resp) => resp.json())
-                    .then((data) => {
-                        setCategories(data)
-                        console.log(data)
-                        console.log(categories.length)
-                    })
-                    .catch((err) => console.log(err))
-            }, 10000)
-            return () => clearTimeout(timer)
-        })
+                .catch((err) => console.log(err))
+        }, 500)
 
+        return
 
+    }
+    useEffect(() => {
+        setTimeout(() => {
+            fetch(`http://localhost:5000/categories`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+                .then((resp) => resp.json())
+                .then((data) => {
+                    setCategories(data)
+                    setRemoveLoading(true)
+                })
+                .catch((err) => console.log(err))
+        }, 500)
     }, [])
+
+    function createCategory(category) {
+        fetch(`http://localhost:5000/categories`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(category)
+        })
+            .then((resp) => resp.json())
+            .then((data) => {
+                console.log(data)
+                getCategories()
+                // message
+            })
+    }
 
     return (
         <div className={styles.row}>
             <div className={styles.col}>
                 <h3>Categorias Registradas</h3>
-                <div className={styles.category_info}>
-                    <div>Infra</div>
-                    <div className={styles.category_actions}>
-                        <div><MdOutlineEditNote /></div>
-                        <div><MdDeleteForever /></div>
-                    </div>
-                </div>
-                <div className={styles.category_info}>
-                    <div>Desenvolvimento</div>
-                    <div className={styles.category_actions}>
-                        <div><MdOutlineEditNote /></div>
-                        <div><MdDeleteForever /></div>
-                    </div>
-                </div>
-                <div className={styles.category_info}>
-                    <div>Design</div>
-                    <div className={styles.category_actions}>
-                        <div><MdOutlineEditNote /></div>
-                        <div><MdDeleteForever /></div>
-                    </div>
-                </div>
-                <div className={styles.category_info}>
-                    <div>Planejamento</div>
-                    <div className={styles.category_actions}>
-                        <div><MdOutlineEditNote /></div>
-                        <div><MdDeleteForever /></div>
-                    </div>
-                </div>
-                {categories.length === 0 && (
-                    <>
-                        <div className={`${styles.category_info} ${styles.none}`}>
-                            <div>Não há categorias registradas.</div>
-                        </div>
-                        <Loading />
-                    </>
+                {categories.length > 0 &&
+                    categories.map((category) => (
+                        <CategoryItem
+                            id={category.id}
+                            name={category.name}
+                            show={true}
+                        />
+                    ))
+                }
+                {!removeLoading && <Loading />}
+                {removeLoading && categories.length === 0 && (
+                    <CategoryItem
+                        show={false}
+                    />
                 )}
-                {isPending && <Loading />}
-
             </div>
 
             <div className={styles.col}>
                 <h3>Insira Novas Categorias</h3>
-                <form className={styles.form}>
-                    <fieldset>
-                        <legend>Dados da Categoria</legend>
-                        <Input label={'Nome da Categoria:'} type={'text'} name={'name'} placeholder={'Nome da Categoria'} />
-                        <div className={styles.actions}>
-                            <LinkButton to="/" btntext={"Cancelar"} />
-                            <SubmitButton btnText={'Criar Categoria'} />
-                        </div>
-                    </fieldset>
-                </form>
+                <CreateCategoryForm
+                    handleSubmit={createCategory}
+                />
             </div>
         </div >
     );
