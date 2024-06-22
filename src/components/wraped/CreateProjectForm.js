@@ -11,12 +11,14 @@ export default function CreateProjectForm() {
         <legend>Dados do Projeto</legend>
         <div className={styles.row}>
           <div className={styles.col}>
-            <Input label={'Nome:'} type={'text'} name={'name'} />
-            <Input label={'Orçamento:'} type={'number'} name={'budget'} />
-            <Select />
-            <div className="actions">
+            <Input label={'Nome:'} type={'text'} name={'name'} placeholder={'Nome do Projeto'} />
+            <Input label={'Orçamento:'} type={'number'} name={'budget'} placeholder={'Orçamento do Projeto'} />
+            <Select
+            label={'Categoria:'}
+            name={'category'} />
+            <div className={styles.actions}>
               <LinkButton to="/" btntext={"Cancelar"} />
-              <SubmitButton />
+              <SubmitButton btnText={'Criar Projeto'} />
             </div>
           </div>
         </div>

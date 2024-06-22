@@ -8,6 +8,7 @@ import Projects from "./components/pages/Projects"
 import FooterItems from "./components/wraped/FooterItems";
 import styles from "./css/core/App.module.css"
 import NewProject from "./components/pages/NewProject";
+import Categories from "./components/pages/Categories";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/newproject" element={<NewProject />} />
+                <Route path="/categories" element={<Categories />} />
               </Routes>
             </Main>
           </div>

@@ -1,4 +1,4 @@
-.input_col {
+.select_col {
     display: block;
 
     margin-bottom: var(--spacing-scale-2x);
@@ -6,7 +6,7 @@
     width: 100%;
 }
 
-.input_col label {
+.select_col label {
     color: var(--gold-vivid-80);
     font-size: var(--font-size-scale-base);
     font-weight: var(--font-weight-semi-bold);
@@ -16,7 +16,7 @@
     cursor: default;
 }
 
-.input_col input {
+.select_col select {
     --background-light: #fff;
     --border-color-alternative: #888;
     --surface-rounder-sm: 4px;
@@ -32,7 +32,7 @@
     border-width: var(--border-width);
     color: var(--color-light);
     display: block;
-    font-size: var(--font-size-scale-up-01);
+    font-size: var(--font-size-scale-base);
     font-weight: var(--font-weight-medium);
     height: var(--input-size);
     margin-top: var(--spacing-scale-half);
@@ -43,16 +43,11 @@
     width: 100%;
 }
 
-.input_col input::placeholder {
-    font-style: italic;
-    font-size: var(--font-size-scale-down-01);
-}
-
-.input_col input:hover {
+.select_col select:hover {
     background-color: #e0e0e0;
 }
 
-.input_col input:focus {
+.select_col select:focus {
     border-color: #c2850c !important;
     box-shadow: 0 0 0 2px #c2850c;
     outline: none;

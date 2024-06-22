@@ -1,5 +1,7 @@
-export default function SubmitButton() {
+import styles from "../../css/single/Button.module.css"
+
+export default function SubmitButton({ btnText }) {
     return (
-        <button type="submit">Criar Projeto</button>
+        <button className={styles.btn} type="submit">{btnText}</button>
     )
 }
