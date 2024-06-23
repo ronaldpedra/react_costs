@@ -2,7 +2,7 @@ import { useState } from "react"
 import styles from "../../css/wraped/Form.module.css"
 import Input from "../single/Input"
 import LinkButton from "../single/LinkButton"
-import SubmitButton from "../single/SubmitButton"
+import Button from "../single/Button"
 import Message from "../single/Message"
 
 export default function CreateCategoryForm({ handleSubmit, categoryData }) {
@@ -10,7 +10,7 @@ export default function CreateCategoryForm({ handleSubmit, categoryData }) {
     const [category, setCategory] = useState(categoryData || {})
     const [message, setMessage] = useState({})
 
-    
+
 
     const submit = (e) => {
         e.preventDefault()
@@ -42,23 +42,24 @@ export default function CreateCategoryForm({ handleSubmit, categoryData }) {
                     name={'name'}
                     placeholder={'Nome da Categoria'}
                     handleOnChange={handleChange}
-                    
+
                 />
                 <div className={styles.actions}>
                     <LinkButton
                         to="/"
                         btntext={"Cancelar"}
                     />
-                    <SubmitButton
+                    <Button
+                        type={'submit'}
                         btnText={'Criar Categoria'}
                     />
                 </div>
                 {message && (
                     <Message
-                    type={message.type}
-                    title={message.title}
-                    body={message.body}                    
-                    handleMessage={setMessage} />
+                        type={message.type}
+                        title={message.title}
+                        body={message.body}
+                        handleMessage={setMessage} />
                 )}
             </fieldset>
         </form>

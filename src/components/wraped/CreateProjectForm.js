@@ -1,7 +1,7 @@
 import Input from "../single/Input";
 import LinkButton from "../single/LinkButton";
 import Select from "../single/Select";
-import SubmitButton from "../single/SubmitButton";
+import Button from "../single/Button";
 import styles from "../../css/wraped/Form.module.css";
 import { useEffect, useState } from "react";
 
@@ -72,8 +72,11 @@ export default function CreateProjectForm({ handleSubmit, projectData }) {
               value={project.category ? project.category.id : ''}
             />
             <div className={styles.actions}>
-              <LinkButton to="/" btntext={"Cancelar"} />
-              <SubmitButton btnText={'Criar Projeto'} />
+              <LinkButton to="/" btnText={"Cancelar"} />
+              <Button
+                type={'submit'}
+                btnText={'Criar Projeto'}
+              />
             </div>
           </div>
         </div>

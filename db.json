@@ -32,6 +32,22 @@
       },
       "cost": 0,
       "services": []
+    },
+    {
+      "id": "05c2",
+      "name": "teste",
+      "budget": "1",
+      "category": {
+        "id": "193d",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "933a",
+      "cost": 0,
+      "services": []
     }
   ],
   "categories": [
