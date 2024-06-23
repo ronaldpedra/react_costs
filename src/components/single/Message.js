@@ -31,7 +31,7 @@ export default function Message({ type, title, body, handleMessage }) {
             if (handleMessage) {
                 handleMessage({})
             }
-        }, 1000)
+        }, 60000)
 
     }, [type, handleMessage])
 

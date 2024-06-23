@@ -12,7 +12,7 @@ export default function NewProject() {
         project.cost = 0
         project.services = []
 
-        fetch(`http://localhost/projects`, {
+        fetch(`http://localhost:5000/projects`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -21,15 +21,14 @@ export default function NewProject() {
         })
             .then((resp) => resp.json())
             .then((data) => {
-                console.log(data)
                 // redirect
                 // message
-                state = {
+                const state = {
                     type: 'success',
                     title: `${data.name}.`,
                     body: 'Projeto criado com sucesso!'
                 }
-                navigate('/projects', {state})
+                navigate('/projects', { state })
             })
             .catch((err) => console.log(err))
 

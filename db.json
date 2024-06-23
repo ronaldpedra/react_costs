@@ -1,5 +1,39 @@
 {
-  "projects": [],
+  "projects": [
+    {
+      "id": "5ce3",
+      "name": "Clijo!",
+      "budget": "5000",
+      "category": {
+        "id": "8605",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "2aa0",
+      "name": "Clijo!",
+      "budget": "600",
+      "category": {
+        "id": "8605",
+        "name": "Planejamento"
+      },
+      "cost": 0,
+      "services": []
+    },
+    {
+      "id": "8d6e",
+      "name": "Ronald Fernandes Pedra",
+      "budget": "1",
+      "category": {
+        "id": "193d",
+        "name": "Infra"
+      },
+      "cost": 0,
+      "services": []
+    }
+  ],
   "categories": [
     {
       "id": "193d",

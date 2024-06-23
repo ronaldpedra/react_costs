@@ -5,6 +5,7 @@
     margin-bottom: var(--spacing-scale-2x);
     color: #333;
     font-size: var(--font-size-scale-base);
+    border: 1px solid transparent;
 }
 
 .icon {
@@ -58,6 +59,7 @@
 
 .danger {
     background-color: #fde0db;
+    border: 1px solid #e52207;
     .icon {
         color: #e52207;
     }
@@ -73,6 +75,7 @@
 
 .success {
     background-color: #e3f5e1;
+    border: 1px solid #168821;
     .icon {
         color: #168821;
     }
@@ -86,6 +89,7 @@
 
 .info {
     background-color: #d4e5ff;
+    border: 1px solid #155bcb;
     .icon {
         color: #155bcb;
     }
@@ -99,6 +103,7 @@
 
 .warning {
     background-color: #fff5c2;
+    border: 1px solid #ffcd07;
     .icon {
         color: #ffcd07;
     }
