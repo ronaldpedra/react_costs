@@ -8,14 +8,11 @@ export default function Projects() {
   const [message, setMessage] = useState({})
 
   const location = useLocation()
-
-  let mensagem = location.state
-  useEffect(() => {
-    if (mensagem) {
-      setMessage(mensagem)
-      
-    }
-  }, [mensagem])
+  let mensagem = ''
+  if (location.state) {
+    mensagem = location.state
+    setMessage(mensagem)
+  }
 
   return (
     <Container customClass='start'>
