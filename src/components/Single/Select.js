@@ -7,10 +7,9 @@ export default function Select({ label, name, options }) {
             <label htmlFor={name}>{label}</label>
             <select name={name} id={name}>
                 <option value="0">Selecione uma categoria</option>
-                {options &&
-                    options.map((option) => {
-                        <option value={option.id}>{option.name}</option>
-                    })}
+                {options.map((option) => (
+                        <option key={option.id} value={option.id}>{option.name}</option>
+                    ))}
             </select>
         </div>
     )
