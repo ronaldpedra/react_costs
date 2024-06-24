@@ -29,12 +29,27 @@ export default function Projects() {
       .then((resp) => resp.json())
       .then((data) => {
         setProjects(data);
-        console.log(data);
       })
       .catch((err) => console.log(err));
   }, []);
 
-  function removeProject() {}
+  function removeProject(id) {
+    let projectsUpdated = []
+    fetch(`http://localhost:5000/projects/${id}`, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((resp) => resp.json())
+      .then((data) => {
+        projectsUpdated = projects.filter((project) => project.id !== id);
+        setProjects(projectsUpdated);
+        //mensagem
+        
+      })
+      .catch((err) => console.log(err));
+  }
 
   return (
     <Container>
@@ -60,6 +75,9 @@ export default function Projects() {
             handleRemove={removeProject}
           />
         ))}
+        {projects.length === 0 && (
+          <div>Não há projetos registrados.</div>
+        )}
       </Container>
     </Container>
   );

@@ -10,8 +10,11 @@ export default function ProjectCard({ id, name, category, budget, handleRemove})
     }
 
     function moeda(valor) {
-        return 
-    }
+        return Intl.NumberFormat("pt-br", {
+          style: "currency",
+          currency: "BRL",
+        }).format(valor);
+      }
 
     return (
         <div className={styles.card_container}>
@@ -21,7 +24,7 @@ export default function ProjectCard({ id, name, category, budget, handleRemove})
                 </div>
                 <div className={styles.card_content}>
                     <span>Categoria:</span><p>{category}</p>
-                    <span>Orçamento:</span><p>{budget}</p>
+                    <span>Orçamento:</span><p>{moeda(budget)}</p>
                 </div>
                 <div className={styles.card_footer}>
                     <LinkButton
