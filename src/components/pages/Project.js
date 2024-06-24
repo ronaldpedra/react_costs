@@ -1,6 +1,5 @@
 import Container from "../layout/Container";
 import styles from "../../css/pages/Project.module.css"
-import LinkButton from "../single/LinkButton";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Button from "../single/Button";

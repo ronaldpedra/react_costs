@@ -41,7 +41,6 @@ export default function NewProject() {
             <CreateProjectForm
                 handleSubmit={createProject}
                 cancelButton={true}
-                projectData={{}}
             />
         </Container>
     )
