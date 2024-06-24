@@ -7,7 +7,7 @@ export default function ProjectCard() {
         <div className={styles.card_container}>
             <div className={styles.card}>
                 <div className={styles.card_header}>
-                    <span>Projeto</span>
+                    <span>Projeto com um nome grande pra caralho</span>
                 </div>
                 <div className={styles.card_content}>
                     <p>Categoria</p>
