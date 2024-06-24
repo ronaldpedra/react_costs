@@ -43,17 +43,6 @@
       },
       "cost": 0,
       "services": []
-    },
-    {
-      "id": "9f81",
-      "name": "teste 3",
-      "budget": "3",
-      "category": {
-        "id": "3",
-        "name": "Design"
-      },
-      "cost": 0,
-      "services": []
     }
   ],
   "categories": [

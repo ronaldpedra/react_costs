@@ -5,7 +5,7 @@ import Button from "../single/Button";
 import styles from "../../css/wraped/Form.module.css";
 import { useEffect, useState } from "react";
 
-export default function CreateProjectForm({ handleSubmit, projectData }) {
+export default function CreateProjectForm({ handleSubmit, projectData, cancelButton = false }) {
   const [categories, setCategories] = useState([]);
   const [project, setProject] = useState(projectData || {});
 
@@ -54,7 +54,7 @@ export default function CreateProjectForm({ handleSubmit, projectData }) {
               name={"name"}
               placeholder={"Nome do Projeto"}
               handleOnChange={handleChange}
-              value={project.name ? project.name : ""}
+              // value={projectData.name ? projectData.name : ""}
             />
             <Input
               label={"Orçamento:"}
@@ -62,17 +62,19 @@ export default function CreateProjectForm({ handleSubmit, projectData }) {
               name={"budget"}
               placeholder={"Orçamento do Projeto"}
               handleOnChange={handleChange}
-              value={project.budget ? project.budget : ""}
+              value={projectData.budget ? projectData.budget : ""}
             />
             <Select
               label={"Categoria:"}
               name={"category_id"}
               options={categories}
               handleOnChange={handleCategory}
-              value={project.category ? project.category.id : ""}
+              value={projectData.category ? projectData.category.id : ""}
             />
             <div className={styles.actions}>
-              <LinkButton to="/" btnText={"Cancelar"} customClass="inverted" />
+              {cancelButton && (
+                <LinkButton to="/" btnText={"Cancelar"} customClass="inverted" />
+              )}
               <Button type={"submit"} btnText={"Criar Projeto"} />
             </div>
           </div>

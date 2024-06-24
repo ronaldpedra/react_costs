@@ -53,10 +53,12 @@
 }
 
 .card_content p span {
+  display: block;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  background-color: red;
+  background-color: #ccc;
+  margin-right: 5px;
 }
 .card_footer {
   display: flex;

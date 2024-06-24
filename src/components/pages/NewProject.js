@@ -40,6 +40,7 @@ export default function NewProject() {
             <h6>Todos os campos são de preenchimento obrigarório.</h6>
             <CreateProjectForm
                 handleSubmit={createProject}
+                cancelButton={true}
             />
         </Container>
     )
