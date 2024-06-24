@@ -23,9 +23,9 @@
 }
 
 .container h4:hover {
+  overflow: visible;
   white-space: normal;
   text-overflow: inherit;
-  overflow: visible;
 }
 
 .container p {
