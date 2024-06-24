@@ -5,7 +5,7 @@ export default function ServiceCard({ id, name, cost, description, handleRemove}
 
     const remover = (e) => {
         e.preventDefault()
-        handleRemove(id)
+        handleRemove(id, cost)
     }
 
     function moeda(valor) {
@@ -16,7 +16,7 @@ export default function ServiceCard({ id, name, cost, description, handleRemove}
     }
 
     return (
-        <div key={id} className={styles.card_container}>
+        <div className={styles.card_container}>
             <div className={styles.card}>
                 <div className={styles.card_header}>
                     <span>{name}</span>

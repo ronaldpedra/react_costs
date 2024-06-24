@@ -73,10 +73,12 @@ export default function Project() {
       // message
       return false;
     }
-    project.cost = newCost;
-    project.services.push(service);
+    let projectUpdated = project
+    service.id = uuidv4()
+    projectUpdated.cost = newCost;
+    projectUpdated.services.push(service);
 
-    fetch(`http://localhost:5000/projects/${project.id}`, {
+    fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -85,15 +87,30 @@ export default function Project() {
     })
       .then((resp) => resp.json())
       .then((data) => {
-        setProject(data);
+        setProject(projectUpdated);
         setShowServiceForm(!showServiceForm);
         // mensagem
       })
       .catch((err) => console.log(err));
   }
 
-  function removeService(service_id) {
-
+  function removeService(id, cost) {
+    let projectUpdated = project
+    projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
+    projectUpdated.services = projectUpdated.services.filter((service) => service.id !== id)
+    fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(project)
+    })
+    .then((resp) => resp.json())
+    .then((data) => {
+      console.log(data)
+      setProject(data)
+    })
+    .catch((err) => console.log(err))
   }
 
   return (
@@ -165,6 +182,7 @@ export default function Project() {
           <>
             {services.map((service) => (
               <ServiceCard
+                key={service.id}
                 id={service.id}
                 name={service.name}
                 cost={service.cost}
