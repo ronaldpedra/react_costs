@@ -1,8 +1,7 @@
 import styles from "../../css/wraped/ProjectCard.module.css"
-import LinkButton from "../single/LinkButton"
 import Button from "../single/Button"
 
-export default function ProjectCard({ id, name, category, budget, handleRemove }) {
+export default function ServiceCard({ id, name, cost, description, handleRemove}) {
 
     const remover = (e) => {
         e.preventDefault()
@@ -23,14 +22,10 @@ export default function ProjectCard({ id, name, category, budget, handleRemove }
                     <span>{name}</span>
                 </div>
                 <div className={styles.card_content}>
-                    <span>Categoria:</span><p>{category}</p>
-                    <span>Orçamento:</span><p>{moeda(budget)}</p>
+                    <span>Custo:</span><p>{moeda(cost)}</p>
+                    <span>Descrição:</span><p>{description}</p>
                 </div>
                 <div className={styles.card_footer}>
-                    <LinkButton
-                        to={`/project/${id}`}
-                        btnText={'Editar'}
-                    />
                     <Button
                         btnText={'Excluir'}
                         customClass='inverted'

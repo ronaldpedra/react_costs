@@ -15,3 +15,10 @@
 .ajuste {
     margin-bottom: var(--spacing-scale-2x);
 }
+
+.project_data {
+    border-bottom: 1px solid var(--gold-vivid-80);
+    span {
+        font-weight: var(--font-weight-semi-bold);
+    }
+}

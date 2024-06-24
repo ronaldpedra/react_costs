@@ -5,8 +5,13 @@ import Button from "../single/Button";
 import styles from "../../css/wraped/Form.module.css";
 import { useEffect, useState } from "react";
 
-export default function CreateProjectForm({ handleSubmit, projectData, cancelButton = false }) {
-
+export default function CreateProjectForm({
+  handleSubmit,
+  projectData,
+  linkButtonText,
+  buttonText,
+  cancelButton = false,
+}) {
   const [categories, setCategories] = useState([]);
   const [project, setProject] = useState(projectData || {});
 
@@ -55,7 +60,7 @@ export default function CreateProjectForm({ handleSubmit, projectData, cancelBut
               name={"name"}
               placeholder={"Nome do Projeto"}
               handleOnChange={handleChange}
-              value={projectData.name ? projectData.name : ""}
+              value={project.name ? project.name : ""}
             />
             <Input
               label={"Orçamento:"}
@@ -63,20 +68,24 @@ export default function CreateProjectForm({ handleSubmit, projectData, cancelBut
               name={"budget"}
               placeholder={"Orçamento do Projeto"}
               handleOnChange={handleChange}
-              value={projectData.budget ? projectData.budget : ""}
+              value={project.budget ? project.budget : ""}
             />
             <Select
               label={"Categoria:"}
               name={"category_id"}
               options={categories}
               handleOnChange={handleCategory}
-              value={projectData.category ? projectData.category.id : ""}
+              value={project.category ? project.category.id : ""}
             />
             <div className={styles.actions}>
               {cancelButton && (
-                <LinkButton to="/" btnText={"Cancelar"} customClass="inverted" />
+                <LinkButton
+                  to="/"
+                  btnText={linkButtonText}
+                  customClass="inverted"
+                />
               )}
-              <Button type={"submit"} btnText={"Criar Projeto"} />
+              <Button type={"submit"} btnText={buttonText} />
             </div>
           </div>
         </div>

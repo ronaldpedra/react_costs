@@ -39,6 +39,8 @@ export default function NewProject() {
             <h1>Criar Projeto</h1>
             <h6>Todos os campos são de preenchimento obrigarório.</h6>
             <CreateProjectForm
+                linkButtonText={'Cancelar'}
+                buttonText={'Criar Projeto'}
                 handleSubmit={createProject}
                 cancelButton={true}
             />
