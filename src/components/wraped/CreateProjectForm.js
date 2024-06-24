@@ -6,6 +6,7 @@ import styles from "../../css/wraped/Form.module.css";
 import { useEffect, useState } from "react";
 
 export default function CreateProjectForm({ handleSubmit, projectData, cancelButton = false }) {
+
   const [categories, setCategories] = useState([]);
   const [project, setProject] = useState(projectData || {});
 
@@ -54,7 +55,7 @@ export default function CreateProjectForm({ handleSubmit, projectData, cancelBut
               name={"name"}
               placeholder={"Nome do Projeto"}
               handleOnChange={handleChange}
-              // value={projectData.name ? projectData.name : ""}
+              value={projectData.name ? projectData.name : ""}
             />
             <Input
               label={"Orçamento:"}
