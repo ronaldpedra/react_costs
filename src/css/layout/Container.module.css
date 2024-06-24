@@ -1,6 +1,7 @@
 @import "../core/Variaveis.css";
 
 .container {
+    box-sizing: border-box;
     width: 1200px;
     padding: var(--spacing-scale-2x);
 }
@@ -20,4 +21,5 @@
     width: 100%;
     justify-content: flex-start;
     flex-wrap: wrap;
+    
 }

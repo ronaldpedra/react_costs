@@ -12,6 +12,11 @@
   border-radius: var(--spacing-scale-half);
 }
 
+.card:hover {
+  background-color: var(--gold-vivid-10);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16);
+}
+
 .card_header {
   padding: var(--spacing-scale-base) var(--spacing-scale-base);
   background-color: var(--gold-vivid-80);
@@ -47,6 +52,12 @@
   }
 }
 
+.card_content p span {
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+}
 .card_footer {
   display: flex;
   justify-content: space-around;

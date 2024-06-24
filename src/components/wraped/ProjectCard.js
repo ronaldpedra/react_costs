@@ -23,7 +23,7 @@ export default function ProjectCard({ id, name, category, budget, handleRemove})
                     <span>{name}</span>
                 </div>
                 <div className={styles.card_content}>
-                    <span>Categoria:</span><p>{category}</p>
+                    <span>Categoria:</span><p><span></span>{category}</p>
                     <span>Orçamento:</span><p>{moeda(budget)}</p>
                 </div>
                 <div className={styles.card_footer}>
