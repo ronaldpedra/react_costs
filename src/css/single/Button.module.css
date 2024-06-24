@@ -29,3 +29,13 @@
 .btn:active {
     background-color: var(--gold-vivid-30);
 }
+
+.inverted {
+    background-color: var(--gold-vivid-5);
+    border: 1px solid var(--gold-vivid-80);
+    color: var(--gold-vivid-80);
+}
+
+.inverted:hover {
+    color: var(--gold-vivid-5);
+}

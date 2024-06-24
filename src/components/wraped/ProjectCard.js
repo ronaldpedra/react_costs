@@ -7,7 +7,7 @@ export default function ProjectCard() {
         <div className={styles.card_container}>
             <div className={styles.card}>
                 <div className={styles.card_header}>
-                    Projeto
+                    <span>Projeto</span>
                 </div>
                 <div className={styles.card_content}>
                     <p>Categoria</p>
@@ -21,6 +21,7 @@ export default function ProjectCard() {
                     />
                     <Button
                     btnText={'Excluir'}
+                    customClass='inverted'
                     />
 
                 </div>

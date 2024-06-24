@@ -47,7 +47,8 @@ export default function CreateCategoryForm({ handleSubmit, categoryData }) {
                 <div className={styles.actions}>
                     <LinkButton
                         to="/"
-                        btntext={"Cancelar"}
+                        btnText={"Cancelar"}
+                        customClass='inverted'
                     />
                     <Button
                         type={'submit'}

@@ -8,14 +8,19 @@
 .card {
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16);
     margin-bottom: var(--spacing-scale-2x);
+    border-radius: var(--spacing-scale-base);
 }
 
 .card_header {
-    padding: var(--spacing-scale-base) var(--spacing-scale-base) 0;
+    padding: var(--spacing-scale-base) var(--spacing-scale-base);
     background-color: var(--gold-vivid-80);
     color: var(--gold-vivid-20);
     font-weight: var(--font-weight-semi-bold);
     font-size: var(--font-size-scale-up-02);
+    border-radius: var(--spacing-scale-base) var(--spacing-scale-base) 0 0;
+
+    display: flex;
+    align-items: start;
 }
 
 .card_content {
