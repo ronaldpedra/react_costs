@@ -46,13 +46,13 @@ export default function Projects() {
         projectsUpdated = projects.filter((project) => project.id !== id);
         setProjects(projectsUpdated);
         //mensagem
-        
+
       })
       .catch((err) => console.log(err));
   }
 
   return (
-    <Container>
+    <>
       <div className={styles.row}>
         <h1>Meus Projetos</h1>
         <div className={styles.ajuste}>
@@ -79,6 +79,6 @@ export default function Projects() {
           <div>Não há projetos registrados.</div>
         )}
       </Container>
-    </Container>
+    </>
   );
 }

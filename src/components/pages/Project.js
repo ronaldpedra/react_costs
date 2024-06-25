@@ -95,9 +95,13 @@ export default function Project() {
   }
 
   function removeService(id, cost) {
+
+    let servicesUpdated = project.services.filter((service) => service.id !== id)
+    project.cost = parseFloat(project.cost) - parseFloat(cost)
+
     let projectUpdated = project
-    projectUpdated.cost = parseFloat(projectUpdated.cost) - parseFloat(cost)
-    projectUpdated.services = projectUpdated.services.filter((service) => service.id !== id)
+    projectUpdated.services = servicesUpdated
+
     fetch(`http://localhost:5000/projects/${projectUpdated.id}`, {
       method: 'PATCH',
       headers: {
@@ -105,16 +109,16 @@ export default function Project() {
       },
       body: JSON.stringify(project)
     })
-    .then((resp) => resp.json())
-    .then((data) => {
-      console.log(data)
-      setProject(data)
-    })
-    .catch((err) => console.log(err))
+      .then((resp) => resp.json())
+      .then((data) => {
+        setProject(data)
+        setServices(data.services)
+      })
+      .catch((err) => console.log(err))
   }
 
   return (
-    <Container>
+    <>
       <h1>{project.name}</h1>
       <Message
         type={message.type}
@@ -135,7 +139,7 @@ export default function Project() {
           </div>
         </div>
       </Container>
-      <Container>
+      <Container customClass="start">
         <div className={styles.project_data}>
           {!showProjectForm && project.name && (
             <>
@@ -167,9 +171,7 @@ export default function Project() {
           <h4>Serviços</h4>
           <div>
             <Button
-              customClass={
-                showServiceForm ? "fixed_width_close" : "fixed_width"
-              }
+              customClass="fixed_width"
               type={"button"}
               btnText={!showServiceForm ? "Criar Serviço" : "Fechar"}
               handleOnClick={toggleServiceForm}
@@ -206,6 +208,6 @@ export default function Project() {
           />
         )}
       </Container>
-    </Container>
+    </>
   );
 }

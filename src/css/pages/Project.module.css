@@ -17,6 +17,7 @@
 }
 
 .project_data {
+    width: 100%;
     border-bottom: 1px solid var(--gold-vivid-80);
     span {
         font-weight: var(--font-weight-semi-bold);

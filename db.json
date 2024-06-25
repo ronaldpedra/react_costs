@@ -1,17 +1,5 @@
 {
-  "projects": [
-    {
-      "id": "9b7e",
-      "name": "Clijo!",
-      "budget": "250000",
-      "category": {
-        "id": "4",
-        "name": "Planejamento"
-      },
-      "cost": 0,
-      "services": []
-    }
-  ],
+  "projects": [],
   "categories": [
     {
       "id": "1",
